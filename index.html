@@ -216,11 +216,9 @@
     /* three overlapping award photos */
     .sd3-hero-right { flex: 1 1 auto; min-width: 0; display: flex; align-items: flex-start; gap: 16px; }
     .sd3-hi { flex: 1 1 0; min-width: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 14px 32px rgba(0,0,0,.20); }
-    /* Box matches the source ratio (584x694) exactly, so object-fit has
-       nothing to crop -- all three photos show in full. */
-    .sd3-hi img { width: 100%; height: auto; aspect-ratio: 584 / 694; object-fit: cover; object-position: 50% 25%; display: block; }
+    .sd3-hi img { width: 100%; height: 400px; object-fit: cover; object-position: 50% 25%; }
     .sd3 .sd3-hi-1 { z-index: 1; }
-    .sd3 .sd3-hi-2 { z-index: 2; margin-top: 48px; }
+    .sd3 .sd3-hi-2 { z-index: 2; margin-top: 76px; }
     .sd3 .sd3-hi-3 { z-index: 3; }
 
     /* ==================== 2. ACCREDITATION STRIP ==================== */
@@ -536,7 +534,7 @@
         .header-wraper .container { padding-left: 32px; padding-right: 32px; }
         .sd3-hero-row { flex-direction: column; }
         .sd3-hero-left, .sd3-hero-right { flex: 1 1 100%; max-width: 100%; }
-        .sd3 .sd3-hero-right { gap: 10px; }
+        .sd3-hi img { height: 240px; }
         .sd3 .sd3-hi-2 { margin: 40px -18px 0 -18px; }
         .sd3-grid4 img { height: 200px; }
         .sd3-grid4.tall { grid-template-columns: repeat(2, 1fr); }
@@ -573,7 +571,7 @@
         .sd3-cons-title h2 { font-size: 24px; }
         .sd3-hero h1 { font-size: 36px; }
         .sd3-hero .sd3-tag { font-size: 17px; }
-        .sd3 .sd3-hero-right { gap: 8px; }
+        .sd3-hi img { height: 150px; }
         .sd3 .sd3-hi-2 { margin: 24px -10px 0 -10px; }
         .sd3-grid4 { grid-template-columns: repeat(2, 1fr); }
         .sd3-grid4 img, .sd3-grid4.tall img { height: 170px; }
