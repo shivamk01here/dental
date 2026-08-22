@@ -17,3 +17,6 @@ Desktop.ini
 node_modules/
 dist/
 build/
+
+# Local agent/editor tooling, not site content
+.claude/

@@ -1,0 +1,8 @@
+# Site root is the repo root; index.html is served at "/".
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

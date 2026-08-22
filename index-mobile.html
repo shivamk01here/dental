@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
 
     <!-- Send desktop-sized screens back to the full layout. The two thresholds are
-         complementary (<768 here, >=768 in index3.html) so they can never ping-pong. -->
+         complementary (<768 here, >=768 in index.html) so they can never ping-pong. -->
     <script>
     (function () {
-        if (window.innerWidth >= 768) { window.location.replace('index3.html'); }
+        if (window.innerWidth >= 768) { window.location.replace('index.html'); }
     })();
     </script>
 
@@ -153,6 +153,10 @@
     .hero h1::after {
         content: ""; display: block; width: 64px; height: 3px; margin-top: 14px;
         background: linear-gradient(90deg, var(--gold), var(--gold2)); border-radius: 2px;
+    }
+    .hero .hero-h2 {
+        font-size: 21px; font-weight: 700; color: var(--gold); line-height: 1.3;
+        margin: 16px 0 0; text-align: left;
     }
     .hero .tag { font-size: 18px; font-weight: 700; margin: 18px 0 8px; line-height: 1.45; }
     .hero .sub { font-size: 16px; margin-bottom: 12px; line-height: 1.55; }
@@ -305,6 +309,10 @@
     .rev-grid { display: grid; grid-template-columns: 1fr; gap: 18px; justify-items: center; }
     .rev-grid img { width: 100%; max-width: 200px; height: 116px; object-fit: contain; }
 
+    /* ==================== 12b. FULL-WIDTH AWARD IMAGE ==================== */
+    .fullimg { width: 100%; line-height: 0; }
+    .fullimg img { width: 100%; height: auto; display: block; }
+
     /* ==================== MEET DR. PRERNA ==================== */
     .dr-img { border-radius: 14px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 8px 24px rgba(0,0,0,.12); }
     .dr-txt p { font-size: 15px; line-height: 1.8; color: #3a3530; }
@@ -370,7 +378,7 @@
     /* ---- large phones / small tablets (still below the 768 handoff) ---- */
     @media (min-width: 560px) {
         .serv-row { grid-template-columns: repeat(2, 1fr); }
-        .rev-grid { grid-template-columns: repeat(3, 1fr); }
+        .rev-grid { grid-template-columns: repeat(2, 1fr); }
         .rev-grid img { max-width: 100%; }
         .promises { flex-direction: row; padding-left: 26px; }
         .promise { flex: 1 1 0; }
@@ -386,7 +394,7 @@
     <div class="wrap hdr-row">
         <a class="hdr-logo" href="#"><img src="assets/img/brand/logo.png" alt="Dr. Prerna Dental Hub"></a>
         <div class="hdr-acts">
-            <a class="hdr-ico" href="#" aria-label="Call"><i class="fa fa-phone"></i></a>
+            <a class="hdr-ico" href="tel:+917042211273" aria-label="Call"><i class="fa fa-phone"></i></a>
             <a class="hdr-ico wa" href="#" aria-label="WhatsApp"><i class="fa fa-whatsapp"></i></a>
             <button class="hdr-burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navPanel">
                 <span></span><span></span><span></span>
@@ -394,7 +402,7 @@
         </div>
     </div>
 </header>
-<a class="hdr-call" href="#">CALL 070422 11273</a>
+<a class="hdr-call" href="tel:+917042211273">CALL 070422 11273</a>
 
 <!-- ============ SLIDE-IN NAV ============ -->
 <div class="nav-scrim" id="navScrim"></div>
@@ -422,6 +430,7 @@
 <section class="hero">
     <div class="wrap">
         <h1>Dr. Prerna<br><span class="gold">Dental Hub</span></h1>
+        <h2 class="hero-h2">All Your Dental Treatments Under One Roof</h2>
         <div class="tag">Painless Dental Care. Trusted by Families.</div>
         <div class="sub">Advanced Dentistry with a Gentle, Patient-First Approach.</div>
         <p class="lead">Get expert dental care from an experienced team using advanced technology &mdash; with your comfort at every step.</p>
@@ -431,7 +440,7 @@
         </ul>
         <div class="hero-cta">
             <a class="btn" href="appointment.html">Book Your Appointment &rarr;</a>
-            <a class="hero-call" href="#"><i class="fa fa-phone"></i> Call Now</a>
+            <a class="hero-call" href="tel:+917042211273"><i class="fa fa-phone"></i> Call Now</a>
             <span class="freecon">Free Consultation Available</span>
         </div>
         <div class="hero-shots">
@@ -475,7 +484,7 @@
     <div class="wrap">
         <div class="award-head">
             <h3>Awarded as the</h3>
-            <h2>Best Dental Clinic in Rohini</h2>
+            <h2>Best Dental Clinic in Delhi</h2>
             <img src="assets/img/awards/service-award-2025.png" alt="Service Award 2025">
         </div>
         <div class="award-years">
@@ -501,6 +510,10 @@
 <section class="sec">
     <div class="wrap">
         <div class="title"><h2>Why choose Us</h2></div>
+        <div class="choose">
+            <video src="assets/video/section.mp4" autoplay muted loop playsinline></video>
+            <p>Achieve a straighter, healthier smile with personalized braces and 3M Ceramic &amp; Invisible Aligners at Dr. Prerna Dental Hub. Our advanced orthodontic treatments are carefully planned to correct alignment, improve your bite, and give you a confident smile with comfort, precision, and discreet treatment options.</p>
+        </div>
         <div class="choose">
             <img src="assets/img/why-choose-us/best-dentist.gif" alt="">
             <p>Selecting the ideal dentist and ensuring precise treatment planning is crucial. At Stunning Dentistry, we dedicate ourselves to providing &ldquo;The Best Dentist in Delhi, India&rdquo;, delivering exceptional care with unmatched precision.</p>
@@ -565,7 +578,7 @@
                 <h2>Guaranteed <img src="assets/img/awards/seal-lowest-price.png" alt="100% Lowest Price"></h2>
                 <h3>Lowest Prices</h3>
             </div>
-            <img class="price-off" src="assets/img/awards/badge-70-percent-off.png" alt="70% OFF">
+            <img class="price-off" src="assets/img/stats/75off.png" alt="75% OFF">
             <div class="price-grid">
                 <div class="price-item">
                     <img src="assets/img/treatments/dental-implants.png" alt="Dental Implant">
@@ -670,17 +683,17 @@
         <div class="stats">
             <div>
                 <div class="stats-circ"><img src="assets/img/stats/dental-implants.png" alt="Dental Implant"></div>
-                <h3>10000 +</h3>
+                <h3>7500 +</h3>
                 <p>Dental Implant</p>
             </div>
             <div>
                 <div class="stats-circ"><img src="assets/img/stats/invisible-aligners.jpg" alt="Invisible Aligners"></div>
-                <h3>5000 +</h3>
+                <h3>3500 +</h3>
                 <p>Invisible Aligners</p>
             </div>
             <div>
                 <div class="stats-circ"><img src="assets/img/stats/invisalign.jpg" alt="Invisalign"></div>
-                <h3>8000 +</h3>
+                <h3>2000 +</h3>
                 <p>Invisalign</p>
             </div>
         </div>
@@ -693,22 +706,29 @@
         <div class="title"><h2>1000 + <b>Five Star Reviews</b></h2></div>
         <div class="rev-card">
             <div class="rev-grid">
-                <img src="assets/img/ratings/google.svg" alt="Google reviews">
-                <img src="assets/img/ratings/facebook.svg" alt="Facebook reviews">
+                <img src="assets/img/ratings/google.png" alt="Google reviews">
+                <img src="assets/img/ratings/facebook.png" alt="Facebook reviews">
                 <img src="assets/img/ratings/instagram.png" alt="Instagram reviews">
+                <img src="assets/img/ratings/practo.png" alt="Practo reviews">
             </div>
         </div>
     </div>
 </section>
 
+
+<!-- ============ 12b. FULL-WIDTH AWARD IMAGE ============ -->
+<section class="fullimg">
+    <img src="assets/img/award-without-text/sunny.jpeg" alt="Dr. Prerna receiving an award">
+</section>
 <!-- ============ 13. MEET DR. PRERNA ============ -->
 <section class="sec" id="mDoctor">
     <div class="wrap">
-        <div class="title"><h2>Meet <b>Dr. Prerna (BDS)</b></h2></div>
+        <div class="title"><h2>Meet <b>Dr. Prerna</b></h2></div>
         <div class="dr-img"><img src="assets/img/team/dr-prerna.webp" alt="Dr. Prerna"></div>
         <div class="dr-txt">
-            <p>Dr. Prerna is committed to providing gentle, patient-focused dental care where comfort, trust, and personalized attention come first. Her approach combines modern dental practices with a compassionate understanding of each patient&rsquo;s individual needs and concerns.</p>
-            <p>At Dr. Prerna Dental Hub, every patient receives personalized treatment in a comfortable and welcoming environment. From preventive and restorative care to smile-enhancing treatments, the focus is on healthy teeth, confident smiles, and a positive dental experience.</p>
+            <p><strong>Dr. Prerna &ndash; Celebrity Dentist &amp; Smile Design Specialist</strong></p>
+            <p>Dr. Prerna Manujia Salini is a dedicated Dental Surgeon and Smile Design Specialist known for her patient-focused approach and commitment to creating healthy, confident smiles. Awarded as one of the Best Dentists in Delhi, she combines advanced dental expertise with compassionate care.</p>
+            <p>Beyond dentistry, Dr. Prerna is also actively involved in social work, contributing to the well-being of the community through her efforts. Her philosophy is to make quality dental care comfortable, personalized, and accessible while delivering exceptional treatment outcomes.</p>
             <div class="dr-meta">
                 <div class="dr-meta-col">
                     <h4>ADDRESS :-</h4>
@@ -743,6 +763,10 @@
             <div class="faq-1">
                 <div class="faq-q"><span>How often should I visit the dentist?</span><span class="faq-ico">+</span></div>
                 <div class="faq-a"><p>Regular dental check-ups are recommended to maintain good oral health and identify potential problems early. Your dentist can suggest a visit schedule based on your individual needs.</p></div>
+            </div>
+            <div class="faq-1">
+                <div class="faq-q"><span>What specialized dental treatments are available at Dr. Prerna Dental Hub?</span><span class="faq-ico">+</span></div>
+                <div class="faq-a"><p>We provide comprehensive specialized dental care, including Root Canal Treatment (Endodontics), Braces &amp; Aligners (Orthodontics), Gum Treatment (Periodontics), Crowns &amp; Dentures (Prosthodontics), Pediatric Dental Care, and Oral &amp; Maxillofacial Surgery&mdash;all under one roof.</p></div>
             </div>
             <div class="faq-1">
                 <div class="faq-q"><span>Are you open on weekends?</span><span class="faq-ico">+</span></div>
@@ -795,7 +819,7 @@
 
 <!-- ============ STICKY ACTION BAR ============ -->
 <div class="actionbar">
-    <a href="#"><i class="fa fa-phone"></i> Call</a>
+    <a href="tel:+917042211273"><i class="fa fa-phone"></i> Call</a>
     <a href="#"><i class="fa fa-whatsapp"></i> WhatsApp</a>
     <a class="primary" href="appointment.html"><i class="fa fa-calendar-check-o"></i> Book Now</a>
 </div>
@@ -905,7 +929,7 @@
     window.addEventListener('resize', function () {
         clearTimeout(t);
         t = setTimeout(function () {
-            if (window.innerWidth >= 768) { window.location.replace('index3.html'); }
+            if (window.innerWidth >= 768) { window.location.replace('index.html'); }
         }, 250);
     });
 })();
