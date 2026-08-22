@@ -401,7 +401,7 @@
     .sd3-cons-title { text-align: center; margin-bottom: 36px; }
     .sd3-cons-title h2 {
         font-family: 'Poppins', sans-serif;
-        font-size: 34px; font-weight: 600; line-height: 1.25;
+        font-size: 34px; font-weight: 600; line-height: 1.15;
     }
     .sd3-cons-title h2 span { color: var(--gold); font-weight: 600; display: block; }
     .sd3-cons-title h2 strong { color: var(--ink); font-weight: 700; display: block; }
@@ -413,10 +413,6 @@
     .sd3-cons-chevron { font-size: 24px; font-weight: 700; color: var(--gold); line-height: 1.4; flex: 0 0 auto; }
     .sd3-cons-col p { font-size: 16px; line-height: 1.8; color: #333; margin: 0; font-family: Georgia, 'Times New Roman', serif; }
     .sd3-cons-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    /* small synced indicator dots above the consultation heading */
-    .sd3-cons-ind { display: flex; gap: 7px; justify-content: center; margin-bottom: 16px; }
-    .sd3-cons-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--gold2); display: inline-block; transition: background .25s; }
-    .sd3-cons-dot.active { background: var(--gold); }
 
     /* ==================== 9 & 10. PHOTO GRIDS ==================== */
     .sd3-grid4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
@@ -1011,13 +1007,8 @@
             <section class="sd3-cons">
                 <div class="sd3-wrap">
                     <div class="sd3-cons-title">
-                        <div class="sd3-cons-ind" id="sd3ConsInd">
-                            <span class="sd3-cons-dot active"></span>
-                            <span class="sd3-cons-dot"></span>
-                            <span class="sd3-cons-dot"></span>
-                        </div>
                         <h2>
-                            <span>Personalised Consultation &amp;</span><br>
+                            <span>Personalised Consultation &amp;</span>
                             <strong>3D Digital Treatment Planning</strong>
                         </h2>
                     </div>
