@@ -1,0 +1,19 @@
+# OS / editor cruft
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Archives & backups - never commit these
+*.zip
+*.rar
+*.7z
+*.bak
+*.tmp
+
+# Dependencies / build output
+node_modules/
+dist/
+build/

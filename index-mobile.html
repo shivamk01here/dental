@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#1E1B17">
+    <title>Best Dentist in Rohini Sector 16 | Dr. Prerna Dental Hub</title>
+    <meta name="description" content="Dr. Prerna Dental Hub, Rohini Sector 16's trusted dental clinic for painless treatments, dental implants &amp; advanced dentistry. Open 7 days, 10 AM - 8 PM.">
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
+    <link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
+
+    <!-- Send desktop-sized screens back to the full layout. The two thresholds are
+         complementary (<768 here, >=768 in index3.html) so they can never ping-pong. -->
+    <script>
+    (function () {
+        if (window.innerWidth >= 768) { window.location.replace('index3.html'); }
+    })();
+    </script>
+
+    <style>
+    /* ============================================================
+       DR. PRERNA DENTAL HUB - MOBILE
+       Standalone, mobile-first. Does not load the desktop site CSS,
+       so nothing here inherits the desktop justify/float rules.
+       ============================================================ */
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    :root {
+        --cream:  #FDF8EF;
+        --cream2: #FAF2E1;
+        --gold:   #C4912E;
+        --gold2:  #E3C57F;
+        --ink:    #1E1B17;
+        --muted:  #5f5952;
+        --line:   #EFE6D6;
+        --green:  #3FA845;
+        --serif:  Georgia, 'Times New Roman', serif;
+        --bar-h:  62px;              /* sticky bottom action bar */
+    }
+
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+    body {
+        margin: 0;
+        padding-bottom: calc(var(--bar-h) + env(safe-area-inset-bottom));
+        font-family: var(--serif);
+        font-size: 16px;
+        line-height: 1.6;
+        color: var(--ink);
+        background: #fff;
+        overflow-x: hidden;         /* belt-and-braces: never scroll sideways */
+    }
+
+    img { max-width: 100%; height: auto; display: block; border: 0; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; margin: 0; padding: 0; }
+    h1, h2, h3, h4 { margin: 0; font-family: var(--serif); line-height: 1.2; }
+    p { margin: 0 0 14px; }
+    p:last-child { margin-bottom: 0; }
+
+    /* every interactive thing clears the 44px touch-target floor */
+    a, button { -webkit-tap-highlight-color: rgba(196,145,46,.18); }
+
+    .wrap { width: 100%; padding: 0 18px; margin: 0 auto; max-width: 560px; }
+    .sec  { padding: 38px 0; }
+    .sec.cream  { background: var(--cream); }
+    .sec.cream2 { background: var(--cream2); }
+
+    .title { text-align: center; margin-bottom: 24px; }
+    .title h2 { font-size: 26px; font-weight: 400; color: var(--gold); }
+    .title h2 b { color: var(--ink); font-weight: 700; }
+
+    .btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        min-height: 50px; padding: 13px 22px;
+        background: var(--gold); color: #fff; font-size: 16px; font-weight: 700;
+        border: 0; border-radius: 6px; width: 100%; text-align: center;
+    }
+    .btn:active { background: #ab7d24; }
+
+    /* ==================== HEADER ==================== */
+    .hdr {
+        position: sticky; top: 0; z-index: 60;
+        background: var(--ink);
+        padding: 10px 0;
+        padding-top: calc(10px + env(safe-area-inset-top));
+    }
+    .hdr-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .hdr-logo img { height: 38px; width: auto; }
+    .hdr-acts { display: flex; align-items: center; gap: 8px; }
+    .hdr-ico {
+        width: 44px; height: 44px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 18px; color: #fff; background: rgba(255,255,255,.12);
+    }
+    .hdr-ico.wa { background: #25D366; }
+    .hdr-burger {
+        width: 44px; height: 44px; border: 0; background: transparent;
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px;
+        padding: 0; cursor: pointer;
+    }
+    .hdr-burger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: .25s; }
+    body.nav-open .hdr-burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    body.nav-open .hdr-burger span:nth-child(2) { opacity: 0; }
+    body.nav-open .hdr-burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* gold call strip under the header */
+    .hdr-call {
+        background: linear-gradient(90deg, var(--gold), #e0b455);
+        text-align: center; padding: 11px 12px; min-height: 46px;
+        font-size: 15px; font-weight: 700; color: #fff; letter-spacing: .3px;
+        display: flex; align-items: center; justify-content: center;
+    }
+
+    /* ==================== SLIDE-IN NAV ==================== */
+    .nav-scrim {
+        position: fixed; inset: 0; z-index: 70;
+        background: rgba(0,0,0,.5);
+        opacity: 0; visibility: hidden; transition: .25s;
+    }
+    body.nav-open .nav-scrim { opacity: 1; visibility: visible; }
+
+    .nav-panel {
+        position: fixed; top: 0; right: 0; bottom: 0; z-index: 80;
+        width: 84%; max-width: 320px;
+        background: #fff; overflow-y: auto;
+        transform: translateX(100%); transition: transform .28s ease;
+        padding-top: env(safe-area-inset-top);
+        -webkit-overflow-scrolling: touch;
+    }
+    body.nav-open .nav-panel { transform: translateX(0); }
+    .nav-head {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 14px 18px; border-bottom: 1px solid var(--line); background: var(--cream);
+    }
+    .nav-head strong { font-size: 15px; }
+    .nav-close { width: 44px; height: 44px; border: 0; background: transparent; font-size: 26px; line-height: 1; color: var(--ink); }
+    .nav-panel nav a {
+        display: block; padding: 15px 18px; min-height: 48px;
+        border-bottom: 1px solid var(--line); font-size: 15px;
+    }
+    .nav-panel nav a:active { background: var(--cream); }
+    .nav-cta { padding: 18px; }
+
+    /* ==================== HERO ==================== */
+    .hero { background: var(--cream); padding: 30px 0 34px; }
+    .hero h1 {
+        font-size: 40px; font-weight: 700; line-height: 1.08;
+        letter-spacing: -0.5px; word-spacing: -1px; margin-bottom: 6px;
+    }
+    .hero h1 .gold { color: var(--gold); }
+    .hero h1::after {
+        content: ""; display: block; width: 64px; height: 3px; margin-top: 14px;
+        background: linear-gradient(90deg, var(--gold), var(--gold2)); border-radius: 2px;
+    }
+    .hero .tag { font-size: 18px; font-weight: 700; margin: 18px 0 8px; line-height: 1.45; }
+    .hero .sub { font-size: 16px; margin-bottom: 12px; line-height: 1.55; }
+    .hero .lead { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 20px; }
+    .hero ul { margin-bottom: 22px; }
+    .hero li { display: flex; gap: 10px; font-size: 15px; margin-bottom: 12px; line-height: 1.5; }
+    .tick { flex: 0 0 20px; color: var(--green); font-size: 19px; font-weight: 700; line-height: 1.2; }
+    .hero-cta { display: flex; flex-direction: column; gap: 12px; }
+    .hero-call {
+        display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+        min-height: 48px; font-size: 16px; border: 1px solid #DCD3C2; border-radius: 6px; background: #fff;
+    }
+    .freecon { text-align: center; font-size: 14px; color: var(--green); }
+
+    /* award photos - horizontal snap strip so they stay big and legible */
+    .hero-shots {
+        display: flex; gap: 12px; margin-top: 24px;
+        overflow-x: auto; scroll-snap-type: x mandatory;
+        padding-bottom: 6px; -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+    }
+    .hero-shots::-webkit-scrollbar { display: none; }
+    .hero-shots figure {
+        margin: 0; flex: 0 0 76%; scroll-snap-align: center;
+        border-radius: 12px; overflow: hidden; box-shadow: 0 10px 24px rgba(0,0,0,.18);
+    }
+    .hero-shots img { width: 100%; height: 300px; object-fit: cover; object-position: 50% 22%; }
+
+    /* ==================== ACCREDITATION MARQUEE ==================== */
+    .brands { background: #fff; padding: 20px 0; border-bottom: 1px solid var(--line); overflow: hidden; }
+    .brands-track { display: flex; width: max-content; animation: marquee 26s linear infinite; }
+    .brands-track ul { display: flex; align-items: center; gap: 38px; padding-right: 38px; }
+    .brands-track img { height: 34px; width: auto; object-fit: contain; }
+    @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .brands-track { animation: none; } }
+
+    /* ==================== AWARDED ==================== */
+    .award { background: #FDF6E4; padding: 32px 0 36px; }
+    .award-head { text-align: center; margin-bottom: 22px; }
+    .award-head h3 { font-size: 23px; font-weight: 700; }
+    .award-head h2 { font-size: 23px; font-weight: 700; color: var(--gold); margin-bottom: 14px; }
+    .award-head img { height: 64px; width: auto; margin: 0 auto; }
+    .award-years { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin-bottom: 30px; }
+    .award-years img { width: 68px; }
+    .promises { display: flex; flex-direction: column; gap: 30px; padding-left: 26px; }
+    .promise {
+        position: relative; display: flex; align-items: center; min-height: 78px;
+        padding: 14px 16px 14px 46px;
+        border: 2px dashed var(--gold); border-radius: 10px; background: #FDF8EC;
+    }
+    .promise img { position: absolute; left: -26px; width: 58px; height: 58px; object-fit: contain; }
+    .promise span { display: block; font-size: 16px; font-weight: 700; line-height: 1.25; }
+
+    /* ==================== WHY CHOOSE US ==================== */
+    .choose {
+        border: 2px dashed var(--gold); background: #fff;
+        padding: 18px; margin-bottom: 16px; border-radius: 10px;
+    }
+    .choose img, .choose video { width: 100%; max-width: 220px; margin: 0 auto 14px; border-radius: 8px; display: block; }
+    .choose p { font-size: 15px; line-height: 1.75; color: #3a3530; }
+
+    /* ==================== SERVICES ==================== */
+    .serv-row { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    .serv {
+        background: #fff; border: 1px solid var(--line); border-radius: 12px;
+        overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,.05);
+    }
+    .serv img { width: 100%; height: 190px; object-fit: cover; }
+    .serv-body { padding: 16px; }
+    .serv h3 { font-size: 17px; margin-bottom: 8px; }
+    .serv p { font-size: 14.5px; color: var(--muted); line-height: 1.6; margin-bottom: 12px; }
+    .serv-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--gold); font-weight: 700; font-size: 15px; }
+
+    /* ==================== LOWEST PRICES ==================== */
+    .price-card {
+        border: 2px solid var(--gold); border-radius: 16px;
+        background: var(--cream); padding: 26px 16px 28px; text-align: center; position: relative;
+    }
+    .price-head h2 { font-size: 25px; font-weight: 400; color: var(--gold); }
+    .price-head h2 img { display: inline-block; height: 44px; width: auto; vertical-align: middle; margin-left: 6px; }
+    .price-head h3 { font-size: 25px; font-weight: 700; margin-bottom: 20px; }
+    .price-off { width: 128px; margin: 0 auto 22px; }
+    .price-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px 12px; }
+    .price-item { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .price-item img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; border: 2px solid #fff; box-shadow: 0 3px 10px rgba(0,0,0,.14); }
+    .price-item span { font-size: 14px; font-weight: 700; line-height: 1.3; }
+
+    /* ==================== BANNER CAROUSEL ==================== */
+    .banner { position: relative; }
+    .banner-slides { position: relative; width: 100%; overflow: hidden; }
+    .banner-slide { position: absolute; top: 0; left: 0; width: 100%; opacity: 0; transition: opacity .6s ease; }
+    .banner-slide.active { opacity: 1; position: relative; }
+    .banner-slide img { width: 100%; height: auto; display: block; }
+    .banner-dots { display: flex; justify-content: center; background: #fff; }
+    /* dot stays 9px visually, but the button itself is a 44px touch target */
+    .banner-dot {
+        width: 30px; height: 44px; border: 0; padding: 0; background: transparent;
+        display: flex; align-items: center; justify-content: center;
+    }
+    .banner-dot::before {
+        content: ""; display: block; width: 9px; height: 9px;
+        border-radius: 50%; background: #DCD3C2; transition: .25s;
+    }
+    .banner-dot.active::before { background: var(--gold); width: 22px; border-radius: 5px; }
+
+    /* ==================== CLINIC IMAGE CAROUSEL ARROWS/DOTS ==================== */
+    .clinic-arr {
+        position: absolute; top: 50%; transform: translateY(-50%); z-index: 5;
+        background: rgba(0,0,0,.45); color: #fff; border: none; cursor: pointer;
+        font-size: 18px; width: 36px; height: 36px; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+    }
+    .clinic-prev { left: 8px; }
+    .clinic-next { right: 8px; }
+    .clinic-dots { display: flex; justify-content: center; gap: 6px; margin-top: 10px; }
+    .clinic-dot {
+        width: 8px; height: 8px; border-radius: 50%; border: none; cursor: pointer;
+        background: #ccc; transition: background .25s;
+    }
+    .clinic-dot.active { background: var(--gold); }
+
+    /* ==================== CONSULTATION ==================== */
+    .cons { background: var(--ink); color: #fff; padding: 40px 0; }
+    .cons h2 { font-size: 22px; text-align: center; margin-bottom: 22px; line-height: 1.35; }
+    .cons h2 span { color: var(--gold2); font-weight: 400; }
+    .cons h2 strong { display: block; margin-top: 4px; }
+    .cons p { font-size: 14.5px; line-height: 1.8; color: #E4DED4; }
+    .cons-col { position: relative; padding-left: 22px; margin-bottom: 20px; }
+    .cons-chev { position: absolute; left: 0; top: -2px; color: var(--gold); font-size: 20px; }
+    .cons-btns { display: flex; flex-direction: column; gap: 12px; margin-top: 26px; }
+
+    /* ==================== RESULTS / GRIDS ==================== */
+    .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .grid2 figure { margin: 0; border-radius: 10px; overflow: hidden; background: var(--cream2); }
+    /* sources are square - match the cell so the logo never gets clipped */
+    .grid2 img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; }
+
+    /* ==================== STATS ==================== */
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; text-align: center; }
+    .stats-circ {
+        width: 74px; height: 74px; margin: 0 auto 10px; border-radius: 50%;
+        overflow: hidden; border: 2px solid var(--gold); background: #fff;
+    }
+    .stats-circ img { width: 100%; height: 100%; object-fit: cover; }
+    .stats h3 { font-size: 19px; color: var(--gold); margin-bottom: 3px; }
+    .stats p { font-size: 12.5px; line-height: 1.35; color: var(--muted); }
+
+    /* ==================== REVIEWS ==================== */
+    .rev-card { border: 1px solid var(--line); border-radius: 14px; background: #fff; padding: 20px 14px; }
+    .rev-grid { display: grid; grid-template-columns: 1fr; gap: 18px; justify-items: center; }
+    .rev-grid img { width: 100%; max-width: 200px; height: 116px; object-fit: contain; }
+
+    /* ==================== MEET DR. PRERNA ==================== */
+    .dr-img { border-radius: 14px; overflow: hidden; margin-bottom: 20px; box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+    .dr-txt p { font-size: 15px; line-height: 1.8; color: #3a3530; }
+    .dr-meta { border-top: 1px solid var(--line); margin-top: 18px; padding-top: 16px; }
+    .dr-meta-col + .dr-meta-col { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .dr-meta h4 { font-size: 14px; color: var(--gold); letter-spacing: .5px; margin-bottom: 5px; }
+    .dr-meta p { font-size: 14.5px; margin: 0; }
+
+    /* ==================== FAQ ==================== */
+    .faq-1 { border-bottom: 1px solid var(--line); background: #fff; border-radius: 8px; margin-bottom: 10px; }
+    .faq-q {
+        display: flex; align-items: center; justify-content: space-between; gap: 14px;
+        padding: 16px 14px; min-height: 56px; cursor: pointer; font-size: 15.5px; font-weight: 700;
+    }
+    .faq-ico { flex: 0 0 26px; font-size: 22px; color: var(--gold); transition: transform .25s; line-height: 1; text-align: center; }
+    .faq-1.open .faq-ico { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; }
+    .faq-1.open .faq-a { max-height: 460px; }
+    .faq-a p { padding: 0 14px 16px; font-size: 14.5px; line-height: 1.75; color: var(--muted); }
+    .faq-foot { text-align: center; margin-top: 20px; font-size: 14.5px; }
+    .faq-foot a { color: var(--gold); font-weight: 700; display: inline-block; min-height: 44px; line-height: 44px; }
+
+    /* ==================== FOOTER ==================== */
+    .foot { background: var(--ink); color: #CFC8BE; padding: 34px 0 26px; font-size: 14.5px; }
+    .foot-logo img { height: 46px; width: auto; margin-bottom: 14px; }
+    .foot p { line-height: 1.75; }
+    .foot h4 { font-size: 15px; color: #fff; margin: 24px 0 10px; }
+    .foot li a, .foot li { display: flex; align-items: center; padding: 11px 0; min-height: 44px; line-height: 1.5; }
+    .foot-social { display: flex; gap: 12px; margin-top: 6px; }
+    .foot-social a {
+        width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,.1);
+        display: flex; align-items: center; justify-content: center; color: var(--gold2); font-size: 17px;
+    }
+    .foot-map { margin-top: 12px; border-radius: 10px; overflow: hidden; }
+    .foot-map iframe { width: 100%; height: 190px; border: 0; display: block; }
+    .foot-bar { border-top: 1px solid rgba(255,255,255,.12); margin-top: 26px; padding-top: 18px; text-align: center; font-size: 13px; }
+
+    /* ==================== STICKY BOTTOM ACTION BAR ==================== */
+    .actionbar {
+        position: fixed; left: 0; right: 0; bottom: 0; z-index: 65;
+        display: flex; background: #fff; border-top: 1px solid var(--line);
+        box-shadow: 0 -3px 14px rgba(0,0,0,.10);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+    .actionbar a {
+        flex: 1 1 0; min-height: var(--bar-h);
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+        font-size: 12px; font-weight: 700; color: var(--ink);
+    }
+    .actionbar a i { font-size: 18px; color: var(--gold); }
+    .actionbar a + a { border-left: 1px solid var(--line); }
+    .actionbar a.primary { background: var(--gold); color: #fff; }
+    .actionbar a.primary i { color: #fff; }
+
+    /* ---- very small phones ---- */
+    @media (max-width: 359px) {
+        .hero h1 { font-size: 34px; }
+        .price-grid { gap: 16px 8px; }
+        .price-item img { width: 62px; height: 62px; }
+        .stats-circ { width: 62px; height: 62px; }
+        .hero-shots img { height: 250px; }
+    }
+    /* ---- large phones / small tablets (still below the 768 handoff) ---- */
+    @media (min-width: 560px) {
+        .serv-row { grid-template-columns: repeat(2, 1fr); }
+        .rev-grid { grid-template-columns: repeat(3, 1fr); }
+        .rev-grid img { max-width: 100%; }
+        .promises { flex-direction: row; padding-left: 26px; }
+        .promise { flex: 1 1 0; }
+        /* banner height now auto from image */
+    }
+    </style>
+</head>
+
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr">
+    <div class="wrap hdr-row">
+        <a class="hdr-logo" href="#"><img src="assets/img/brand/logo.png" alt="Dr. Prerna Dental Hub"></a>
+        <div class="hdr-acts">
+            <a class="hdr-ico" href="#" aria-label="Call"><i class="fa fa-phone"></i></a>
+            <a class="hdr-ico wa" href="#" aria-label="WhatsApp"><i class="fa fa-whatsapp"></i></a>
+            <button class="hdr-burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="navPanel">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</header>
+<a class="hdr-call" href="#">CALL 070422 11273</a>
+
+<!-- ============ SLIDE-IN NAV ============ -->
+<div class="nav-scrim" id="navScrim"></div>
+<aside class="nav-panel" id="navPanel">
+    <div class="nav-head">
+        <strong>Menu</strong>
+        <button class="nav-close" id="navClose" aria-label="Close menu">&times;</button>
+    </div>
+    <nav>
+        <a href="#">General Dentistry</a>
+        <a href="#">Implant Dentistry</a>
+        <a href="#">Technology</a>
+        <a href="#">Super Speciality Dentistry</a>
+        <a href="#">Same Day Dentistry</a>
+        <a href="#">Our Information</a>
+        <a href="#mAward">Awards</a>
+        <a href="#mResults">Results You&rsquo;ll Love</a>
+        <a href="#mDoctor">Meet Dr. Prerna</a>
+        <a href="#mFaq">FAQs</a>
+    </nav>
+    <div class="nav-cta"><a class="btn" href="appointment.html">Book Appointment &rarr;</a></div>
+</aside>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero">
+    <div class="wrap">
+        <h1>Dr. Prerna<br><span class="gold">Dental Hub</span></h1>
+        <div class="tag">Painless Dental Care. Trusted by Families.</div>
+        <div class="sub">Advanced Dentistry with a Gentle, Patient-First Approach.</div>
+        <p class="lead">Get expert dental care from an experienced team using advanced technology &mdash; with your comfort at every step.</p>
+        <ul>
+            <li><span class="tick">&#10003;</span> Advanced &amp; Painless Treatment Technology</li>
+            <li><span class="tick">&#10003;</span> Open 7 Days a Week | 10 AM &ndash; 8 PM</li>
+        </ul>
+        <div class="hero-cta">
+            <a class="btn" href="appointment.html">Book Your Appointment &rarr;</a>
+            <a class="hero-call" href="#"><i class="fa fa-phone"></i> Call Now</a>
+            <span class="freecon">Free Consultation Available</span>
+        </div>
+        <div class="hero-shots">
+            <figure><img src="assets/img/hero/award-brett-lee.png" alt="Dr. Prerna receiving an award from Brett Lee"></figure>
+            <figure><img src="assets/img/hero/award-bhagyashree.png" alt="Dr. Prerna receiving an award from Bhagyashree"></figure>
+            <figure><img src="assets/img/hero/award-mouni-roy.png" alt="Dr. Prerna receiving an award from Mouni Roy"></figure>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 2. ACCREDITATION MARQUEE ============ -->
+<section class="brands">
+    <div class="brands-track">
+        <ul>
+            <li><img src="assets/img/accreditation/aaid.png" alt="AAID"></li>
+            <li><img src="assets/img/accreditation/aacd.png" alt="AACD"></li>
+            <li><img src="assets/img/accreditation/aae.png" alt="AAE"></li>
+            <li><img src="assets/img/accreditation/bacd.png" alt="BACD"></li>
+            <li><img src="assets/img/accreditation/fdi.png" alt="FDI"></li>
+            <li><img src="assets/img/accreditation/iti.png" alt="ITI"></li>
+            <li><img src="assets/img/accreditation/ida.png" alt="IDA"></li>
+            <li><img src="assets/img/accreditation/global.png" alt="Global"></li>
+            <li><img src="assets/img/accreditation/iso.png" alt="ISO"></li>
+        </ul>
+        <ul aria-hidden="true">
+            <li><img src="assets/img/accreditation/aaid.png" alt=""></li>
+            <li><img src="assets/img/accreditation/aacd.png" alt=""></li>
+            <li><img src="assets/img/accreditation/aae.png" alt=""></li>
+            <li><img src="assets/img/accreditation/bacd.png" alt=""></li>
+            <li><img src="assets/img/accreditation/fdi.png" alt=""></li>
+            <li><img src="assets/img/accreditation/iti.png" alt=""></li>
+            <li><img src="assets/img/accreditation/ida.png" alt=""></li>
+            <li><img src="assets/img/accreditation/global.png" alt=""></li>
+            <li><img src="assets/img/accreditation/iso.png" alt=""></li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============ 3. AWARDED ============ -->
+<section class="award" id="mAward">
+    <div class="wrap">
+        <div class="award-head">
+            <h3>Awarded as the</h3>
+            <h2>Best Dental Clinic in Rohini</h2>
+            <img src="assets/img/awards/service-award-2025.png" alt="Service Award 2025">
+        </div>
+        <div class="award-years">
+            <img src="assets/img/awards/best-clinic-2021.png" alt="Best Dental Clinic in Rohini 2021">
+            <img src="assets/img/awards/best-clinic-2022.png" alt="Best Dental Clinic in Rohini 2022">
+            <img src="assets/img/awards/best-clinic-2025.png" alt="Best Dental Clinic in Rohini 2025">
+            <img src="assets/img/awards/best-clinic-2026.png" alt="Best Dental Clinic in Rohini 2026">
+        </div>
+        <div class="promises">
+            <div class="promise">
+                <img src="assets/img/awards/seal-lifetime-warranty.png" alt="">
+                <div><span>Lifetime warranty</span><span>On All Treatments</span></div>
+            </div>
+            <div class="promise">
+                <img src="assets/img/awards/seal-lowest-price.png" alt="">
+                <div><span>Losest Price</span><span>Garanted</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 4. WHY CHOOSE US ============ -->
+<section class="sec">
+    <div class="wrap">
+        <div class="title"><h2>Why choose Us</h2></div>
+        <div class="choose">
+            <img src="assets/img/why-choose-us/best-dentist.gif" alt="">
+            <p>Selecting the ideal dentist and ensuring precise treatment planning is crucial. At Stunning Dentistry, we dedicate ourselves to providing &ldquo;The Best Dentist in Delhi, India&rdquo;, delivering exceptional care with unmatched precision.</p>
+        </div>
+        <div class="choose">
+            <img src="assets/img/why-choose-us/advanced-technology.gif" alt="">
+            <p>With access to the world&rsquo;s most advanced dental technologies, we meticulously curate premium materials to ensure absolute treatment success. This commitment empowers us to offer Lifetime Warranties on all our dental services.</p>
+        </div>
+        <div class="choose">
+            <video src="assets/video/main.mp4" autoplay muted loop playsinline></video>
+            <p>Trusted by notable personalities and patients alike, including Sunny Arya, Bigg Boss contestant, who chose Dr. Prerna Dental Hub for his dental treatment. His trust reflects our commitment to delivering exceptional care, advanced treatments, and a comfortable dental experience tailored to every individual.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 5. OUR TOP SERVICES ============ -->
+<section class="sec cream">
+    <div class="wrap">
+        <div class="title"><h2>Our Top services</h2></div>
+        <div class="serv-row">
+            <div class="serv">
+                <img src="assets/img/services/teeth-braces.jpg" alt="Teeth Braces">
+                <div class="serv-body">
+                    <h3>Teeth Braces</h3>
+                    <p>Straighten your teeth and achieve a confident, beautiful smile.</p>
+                    <a class="serv-link" href="#">Know more &rarr;</a>
+                </div>
+            </div>
+            <div class="serv">
+                <img src="assets/img/services/dental-implants.jpg" alt="Dental Implants">
+                <div class="serv-body">
+                    <h3>Dental Implants</h3>
+                    <p>Replace missing teeth with strong, natural-looking dental implants.</p>
+                    <a class="serv-link" href="#">Know more &rarr;</a>
+                </div>
+            </div>
+            <div class="serv">
+                <img src="assets/img/services/invisible-aligners.jpg" alt="Clear Aligners">
+                <div class="serv-body">
+                    <h3>Clear Aligners</h3>
+                    <p>Straighten your smile discreetly with comfortable, nearly invisible aligners.</p>
+                    <a class="serv-link" href="#">Know more &rarr;</a>
+                </div>
+            </div>
+            <div class="serv">
+                <img src="assets/img/services/root-canal-treatment.jpg" alt="Root Canal Treatment">
+                <div class="serv-body">
+                    <h3>Root Canal Treatment</h3>
+                    <p>Relieve tooth pain and save your natural tooth with advanced treatment.</p>
+                    <a class="serv-link" href="#">Know more &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 6. GUARANTEED LOWEST PRICES ============ -->
+<section class="sec">
+    <div class="wrap">
+        <div class="price-card">
+            <div class="price-head">
+                <h2>Guaranteed <img src="assets/img/awards/seal-lowest-price.png" alt="100% Lowest Price"></h2>
+                <h3>Lowest Prices</h3>
+            </div>
+            <img class="price-off" src="assets/img/awards/badge-70-percent-off.png" alt="70% OFF">
+            <div class="price-grid">
+                <div class="price-item">
+                    <img src="assets/img/treatments/dental-implants.png" alt="Dental Implant">
+                    <span>Dental Implant</span>
+                </div>
+                <div class="price-item">
+                    <img src="assets/img/treatments/full-mouth-rehabilitation.png" alt="Full Mouth Rehabilitation">
+                    <span>Full Mouth<br>Rehabilitation</span>
+                </div>
+                <div class="price-item">
+                    <img src="assets/img/treatments/tmj-orofacial-pain.png" alt="TMJ &amp; Orofacial Pain">
+                    <span>TMJ &amp; Orofacial Pain</span>
+                </div>
+                <div class="price-item">
+                    <img src="assets/img/treatments/invisible-aligners.png" alt="Invisible Aligners">
+                    <span>Invisible Aligners</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 7. AWARD BANNER CAROUSEL ============ -->
+<section class="banner">
+    <div class="banner-slides" id="mBannerSlides">
+        <div class="banner-slide active"><img src="assets/img/award-without-text/brett-lee.png" alt="Dr. Prerna receiving an award from Brett Lee"></div>
+        <div class="banner-slide"><img src="assets/img/award-without-text/Bhagyashree.png" alt="Dr. Prerna receiving an award from Bhagyashree"></div>
+        <div class="banner-slide"><img src="assets/img/award-without-text/mauni-roy.png" alt="Dr. Prerna receiving an award from Mouni Roy"></div>
+    </div>
+    <div class="banner-dots" id="mBannerDots">
+        <button class="banner-dot active" data-slide="0" aria-label="Slide 1"></button>
+        <button class="banner-dot" data-slide="1" aria-label="Slide 2"></button>
+        <button class="banner-dot" data-slide="2" aria-label="Slide 3"></button>
+    </div>
+</section>
+
+<!-- ============ 8. PERSONALISED CONSULTATION ============ -->
+<section class="cons">
+    <div class="wrap">
+        <h2><span>Personalised Consultation &amp;</span><strong>3D Digital Treatment Planning</strong></h2>
+        <div class="cons-col">
+            <span class="cons-chev">&raquo;</span>
+            <p>Experience comprehensive case evaluation, cutting-edge 3D digital treatment planning, and personalized consultations with our internationally trained, award-winning dental experts at Delhi's premier dental hospital. Gain immediate insights into your transformation with advanced smile simulations, allowing you to visualize your final results within just 30 minutes, before treatment even begins.</p>
+        </div>
+        <div class="cons-col">
+            <span class="cons-chev">&raquo;</span>
+            <p>Our Interactive 3D dental consultations provide unparalleled clarity in assessing your treatment options. We guide you seamlessly in selecting the most optimal solution, ensuring 100% treatment success, all while offering India's most competitive dental pricing, without compromising on quality or precision.</p>
+        </div>
+        <div class="cons-btns">
+            <a class="btn" href="appointment.html"><i class="fa fa-whatsapp"></i> Book Appointment now</a>
+            <a class="btn" href="#"><i class="fa fa-file-text-o"></i> Request A Quote</a>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 9. WHERE SMILES BEGIN ============ -->
+<section class="banner">
+    <div class="title" style="text-align:center;padding:28px 0 14px;"><h2><b>Where Smiles Begin</b> &#10084;&#65039;</h2></div>
+    <div class="banner-slides" id="mClinicSlides">
+        <div class="banner-slide active"><img src="assets/img/Clinic Images/1.png" alt="Clinic Image 1"></div>
+        <div class="banner-slide"><img src="assets/img/Clinic Images/2.png" alt="Clinic Image 2"></div>
+        <div class="banner-slide"><img src="assets/img/Clinic Images/3.png" alt="Clinic Image 3"></div>
+        <div class="banner-slide"><img src="assets/img/Clinic Images/4.png" alt="Clinic Image 4"></div>
+        <div class="banner-slide"><img src="assets/img/Clinic Images/5.png" alt="Clinic Image 5"></div>
+        <div class="banner-slide"><img src="assets/img/Clinic Images/6.png" alt="Clinic Image 6"></div>
+        <div class="banner-slide"><img src="assets/img/Clinic Images/7.png" alt="Clinic Image 7"></div>
+        <div class="banner-slide"><img src="assets/img/Clinic Images/8.png" alt="Clinic Image 8"></div>
+    </div>
+    <button class="clinic-arr clinic-prev" id="mClinicPrev">&#10094;</button>
+    <button class="clinic-arr clinic-next" id="mClinicNext">&#10095;</button>
+    <div class="clinic-dots" id="mClinicDots">
+        <button class="clinic-dot active" data-slide="0"></button>
+        <button class="clinic-dot" data-slide="1"></button>
+        <button class="clinic-dot" data-slide="2"></button>
+        <button class="clinic-dot" data-slide="3"></button>
+        <button class="clinic-dot" data-slide="4"></button>
+        <button class="clinic-dot" data-slide="5"></button>
+        <button class="clinic-dot" data-slide="6"></button>
+        <button class="clinic-dot" data-slide="7"></button>
+    </div>
+</section>
+
+<!-- ============ 10. RESULTS YOU'LL LOVE ============ -->
+<section class="sec" id="mResults">
+    <div class="wrap">
+        <div class="title"><h2><b>Results You&rsquo;ll Love</b></h2></div>
+        <div class="grid2">
+            <figure><img src="assets/img/results/before-after-1.png" alt=""></figure>
+            <figure><img src="assets/img/results/before-after-2.png" alt=""></figure>
+            <figure><img src="assets/img/results/before-after-3.png" alt=""></figure>
+            <figure><img src="assets/img/results/before-after-4.png" alt=""></figure>
+            <figure><img src="assets/img/results/before-after-5.png" alt=""></figure>
+            <figure><img src="assets/img/results/before-after-6.png" alt=""></figure>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 11. SUCCESSFULLY COMPLETED ============ -->
+<section class="sec cream">
+    <div class="wrap">
+        <div class="title"><h2>SuccessFully Completed</h2></div>
+        <div class="stats">
+            <div>
+                <div class="stats-circ"><img src="assets/img/stats/dental-implants.png" alt="Dental Implant"></div>
+                <h3>10000 +</h3>
+                <p>Dental Implant</p>
+            </div>
+            <div>
+                <div class="stats-circ"><img src="assets/img/stats/invisible-aligners.jpg" alt="Invisible Aligners"></div>
+                <h3>5000 +</h3>
+                <p>Invisible Aligners</p>
+            </div>
+            <div>
+                <div class="stats-circ"><img src="assets/img/stats/invisalign.jpg" alt="Invisalign"></div>
+                <h3>8000 +</h3>
+                <p>Invisalign</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 12. FIVE STAR REVIEWS ============ -->
+<section class="sec">
+    <div class="wrap">
+        <div class="title"><h2>1000 + <b>Five Star Reviews</b></h2></div>
+        <div class="rev-card">
+            <div class="rev-grid">
+                <img src="assets/img/ratings/google.svg" alt="Google reviews">
+                <img src="assets/img/ratings/facebook.svg" alt="Facebook reviews">
+                <img src="assets/img/ratings/instagram.png" alt="Instagram reviews">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 13. MEET DR. PRERNA ============ -->
+<section class="sec" id="mDoctor">
+    <div class="wrap">
+        <div class="title"><h2>Meet <b>Dr. Prerna (BDS)</b></h2></div>
+        <div class="dr-img"><img src="assets/img/team/dr-prerna.webp" alt="Dr. Prerna"></div>
+        <div class="dr-txt">
+            <p>Dr. Prerna is committed to providing gentle, patient-focused dental care where comfort, trust, and personalized attention come first. Her approach combines modern dental practices with a compassionate understanding of each patient&rsquo;s individual needs and concerns.</p>
+            <p>At Dr. Prerna Dental Hub, every patient receives personalized treatment in a comfortable and welcoming environment. From preventive and restorative care to smile-enhancing treatments, the focus is on healthy teeth, confident smiles, and a positive dental experience.</p>
+            <div class="dr-meta">
+                <div class="dr-meta-col">
+                    <h4>ADDRESS :-</h4>
+                    <p>H-5/18, Main Road, Pocket 5, Sector 16, Rohini, New Delhi &ndash; 110089</p>
+                </div>
+                <div class="dr-meta-col">
+                    <h4>Timings :-</h4>
+                    <p>10:00 AM &ndash; 8:00 PM (Open 7 Days)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============ 14. FAQ ============ -->
+<section class="sec cream2" id="mFaq">
+    <div class="wrap">
+        <div class="title"><h2><b>Got Questions?</b> We&rsquo;ve got your answers</h2></div>
+        <div id="mFaqList">
+            <div class="faq-1">
+                <div class="faq-q"><span>What dental treatments do you offer?</span><span class="faq-ico">+</span></div>
+                <div class="faq-a"><p>We offer a wide range of dental treatments, including preventive care, teeth cleaning, root canal treatment, braces and aligners, dental implants, cosmetic dentistry, and smile-enhancement procedures.</p></div>
+            </div>
+            <div class="faq-1">
+                <div class="faq-q"><span>Is dental treatment painful?</span><span class="faq-ico">+</span></div>
+                <div class="faq-a"><p>We use modern techniques and advanced technology to make treatments as comfortable and painless as possible. Our team also takes extra care to ensure you feel relaxed throughout your treatment.</p></div>
+            </div>
+            <div class="faq-1">
+                <div class="faq-q"><span>Do I need to book an appointment before visiting?</span><span class="faq-ico">+</span></div>
+                <div class="faq-a"><p>We recommend booking an appointment so we can give you dedicated time and minimize waiting. You can call us or book your appointment online.</p></div>
+            </div>
+            <div class="faq-1">
+                <div class="faq-q"><span>How often should I visit the dentist?</span><span class="faq-ico">+</span></div>
+                <div class="faq-a"><p>Regular dental check-ups are recommended to maintain good oral health and identify potential problems early. Your dentist can suggest a visit schedule based on your individual needs.</p></div>
+            </div>
+            <div class="faq-1">
+                <div class="faq-q"><span>Are you open on weekends?</span><span class="faq-ico">+</span></div>
+                <div class="faq-a"><p>Yes. Dr. Prerna Dental Hub is open 7 days a week, from 10:00 AM to 8:00 PM, making it convenient to schedule your dental visit.</p></div>
+            </div>
+        </div>
+        <div class="faq-foot">Still have a question? <a href="#">CONTACT US &rarr;</a></div>
+    </div>
+</section>
+
+<!-- ============ 15. FOOTER ============ -->
+<footer class="foot">
+    <div class="wrap">
+        <div class="foot-logo"><img src="assets/img/brand/logo.png" alt="Dr. Prerna Dental Hub"></div>
+        <p>Dr. Prerna Dental Hub is a premium dental clinic in Rohini, New Delhi offering painless dentistry, dental implants, aligners and complete smile makeovers with advanced technology and lifetime warranties.</p>
+
+        <h4>Quick Links</h4>
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">About Doctor</a></li>
+            <li><a href="#">Smile Gallery</a></li>
+            <li><a href="#">Case Studies</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#mFaq">FAQs</a></li>
+        </ul>
+
+        <h4>Get in Touch!</h4>
+        <ul>
+            <li><a href="#"><i class="fa fa-phone"></i> 070422 11273</a></li>
+            <li><a href="#"><i class="fa fa-envelope"></i> drprerna@gmail.com</a></li>
+        </ul>
+
+        <h4>Follow us on</h4>
+        <div class="foot-social">
+            <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fa fa-whatsapp"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+        </div>
+
+        <h4>Clinic Address</h4>
+        <p>H-5/18, Main Road, Pocket 5, Sector 16, Rohini, New Delhi, Delhi, 110089</p>
+        <div class="foot-map">
+            <iframe src="https://www.google.com/maps?q=H-5%2F18%2C+Main+Road%2C+Pocket+5%2C+Sector+16%2C+Rohini%2C+New+Delhi%2C+Delhi%2C+110089&amp;output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Clinic location"></iframe>
+        </div>
+
+        <div class="foot-bar">&copy; <span id="mYear">2026</span> Dr. Prerna Dental Hub. All rights reserved.</div>
+    </div>
+</footer>
+
+<!-- ============ STICKY ACTION BAR ============ -->
+<div class="actionbar">
+    <a href="#"><i class="fa fa-phone"></i> Call</a>
+    <a href="#"><i class="fa fa-whatsapp"></i> WhatsApp</a>
+    <a class="primary" href="appointment.html"><i class="fa fa-calendar-check-o"></i> Book Now</a>
+</div>
+
+<script>
+(function () {
+    'use strict';
+
+    /* ---- nothing on this page navigates away: swallow every "#" click ---- */
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest ? e.target.closest('a') : null;
+        if (!a) return;
+        var href = a.getAttribute('href') || '';
+        if (href === '#') { e.preventDefault(); }
+    });
+
+    /* ---- slide-in nav ---- */
+    var burger = document.getElementById('burger');
+    var scrim  = document.getElementById('navScrim');
+    var close  = document.getElementById('navClose');
+    var panel  = document.getElementById('navPanel');
+
+    function setNav(open) {
+        document.body.classList.toggle('nav-open', open);
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        document.body.style.overflow = open ? 'hidden' : '';
+    }
+    burger.addEventListener('click', function () { setNav(!document.body.classList.contains('nav-open')); });
+    scrim.addEventListener('click',  function () { setNav(false); });
+    close.addEventListener('click',  function () { setNav(false); });
+    panel.addEventListener('click',  function (e) { if (e.target.tagName === 'A') { setNav(false); } });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') { setNav(false); } });
+
+    /* ---- banner carousel ---- */
+    var slides = document.querySelectorAll('#mBannerSlides .banner-slide');
+    var dots   = document.querySelectorAll('#mBannerDots .banner-dot');
+    var cur = 0, timer = null;
+
+    function show(i) {
+        cur = (i + slides.length) % slides.length;
+        for (var s = 0; s < slides.length; s++) { slides[s].classList.toggle('active', s === cur); }
+        for (var d = 0; d < dots.length; d++)   { dots[d].classList.toggle('active', d === cur); }
+    }
+    function start() { stop(); timer = setInterval(function () { show(cur + 1); }, 4500); }
+    function stop()  { if (timer) { clearInterval(timer); timer = null; } }
+
+    for (var d = 0; d < dots.length; d++) {
+        (function (idx) {
+            dots[idx].addEventListener('click', function () { show(idx); start(); });
+        })(d);
+    }
+    /* swipe between slides */
+    var box = document.getElementById('mBannerSlides'), x0 = null;
+    box.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; stop(); }, { passive: true });
+    box.addEventListener('touchend', function (e) {
+        if (x0 === null) return;
+        var dx = e.changedTouches[0].clientX - x0;
+        if (Math.abs(dx) > 40) { show(cur + (dx < 0 ? 1 : -1)); }
+        x0 = null; start();
+    }, { passive: true });
+    start();
+
+    /* ---- clinic image carousel ---- */
+    (function () {
+        var cSlides = document.querySelectorAll('#mClinicSlides .banner-slide');
+        var cDots   = document.querySelectorAll('#mClinicDots .clinic-dot');
+        var cTotal  = cSlides.length, cCur = 0;
+        function cShow(n) {
+            cCur = ((n % cTotal) + cTotal) % cTotal;
+            for (var i = 0; i < cTotal; i++) { cSlides[i].classList.toggle('active', i === cCur); }
+            for (var j = 0; j < cDots.length; j++) { cDots[j].classList.toggle('active', j === cCur); }
+        }
+        document.getElementById('mClinicPrev').addEventListener('click', function () { cShow(cCur - 1); });
+        document.getElementById('mClinicNext').addEventListener('click', function () { cShow(cCur + 1); });
+        for (var i = 0; i < cDots.length; i++) {
+            (function (idx) { cDots[idx].addEventListener('click', function () { cShow(idx); }); })(i);
+        }
+        var cBox = document.getElementById('mClinicSlides'), cx0 = null;
+        cBox.addEventListener('touchstart', function (e) { cx0 = e.touches[0].clientX; }, { passive: true });
+        cBox.addEventListener('touchend', function (e) {
+            if (cx0 === null) return;
+            var dx = e.changedTouches[0].clientX - cx0;
+            if (Math.abs(dx) > 40) { cShow(cCur + (dx < 0 ? 1 : -1)); }
+            cx0 = null;
+        }, { passive: true });
+        setInterval(function () { cShow(cCur + 1); }, 3000);
+        cShow(0);
+    })();
+
+    /* ---- FAQ accordion ---- */
+    var faqs = document.querySelectorAll('#mFaqList .faq-1');
+    for (var f = 0; f < faqs.length; f++) {
+        (function (item) {
+            item.querySelector('.faq-q').addEventListener('click', function () {
+                var isOpen = item.classList.contains('open');
+                for (var k = 0; k < faqs.length; k++) { faqs[k].classList.remove('open'); }
+                if (!isOpen) { item.classList.add('open'); }
+            });
+        })(faqs[f]);
+    }
+
+    /* ---- footer year ---- */
+    document.getElementById('mYear').textContent = new Date().getFullYear();
+
+    /* ---- hand back to the desktop layout if the window grows ---- */
+    var t = null;
+    window.addEventListener('resize', function () {
+        clearTimeout(t);
+        t = setTimeout(function () {
+            if (window.innerWidth >= 768) { window.location.replace('index3.html'); }
+        }, 250);
+    });
+})();
+</script>
+
+</body>
+</html>
