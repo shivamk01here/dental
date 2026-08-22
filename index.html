@@ -9,17 +9,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="canonical" href="index.html" />
 
-    <!-- Hand small screens to the dedicated mobile build. Runs before paint so the
-         desktop layout never flashes. The two thresholds are complementary
-         (>=768 there, <768 here) so the two pages can never ping-pong. -->
-    <script>
-    (function () {
-        if (window.innerWidth < 768) { window.location.replace('index-mobile.html'); }
-    })();
-    </script>
-
-    <link rel="shortcut icon" href="assets/favicon.png" type="image/png">
-    <link rel="icon" href="assets/favicon.png" type="image/png">
+    <link rel="shortcut icon" href="assets/favicon.webp" type="image/png">
+    <link rel="icon" href="assets/favicon.webp" type="image/png">
 
     <!-- Poppins for banner caption + consultation heading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -480,19 +471,24 @@
     .sd3-dr-img img { width: 100%; display: block; }
     .sd3-dr-txt { flex: 1 1 auto; min-width: 0; }
     .sd3-dr-txt p { font-size: 16px; line-height: 1.85; color: #3a3530; font-family: Georgia, 'Times New Roman', serif; margin-bottom: 18px; }
+    /* Role line under the doctor's name */
+    .sd3-dr-role {
+        font-size: 18px; font-weight: 700; color: var(--gold);
+        margin: 0 0 14px; letter-spacing: .2px;
+    }
+    /* Address + timings deliberately break from the Georgia body copy:
+       a sans face sets the practical details apart from the prose. */
     .sd3-dr-meta {
-        display: grid; grid-template-columns: 1fr 1fr; gap: 0;
         margin-top: 28px; border-top: 1px solid var(--line); padding-top: 20px;
     }
-    .sd3-dr-meta-col { padding-right: 24px; }
-    .sd3-dr-meta-col + .sd3-dr-meta-col { padding-right: 0; padding-left: 24px; border-left: 1px solid var(--line); }
-    .sd3-dr-meta h4 {
-        font-size: 13px; font-weight: 700; letter-spacing: 1px; margin-bottom: 8px;
-        color: var(--gold); font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; text-transform: uppercase;
-    }
     .sd3-dr-meta p {
-        font-size: 15px; margin: 0; color: #3a3530; line-height: 1.7;
+        font-size: 15px; margin: 0 0 10px; color: #3a3530; line-height: 1.7;
         font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; letter-spacing: .2px;
+    }
+    .sd3-dr-meta p:last-child { margin-bottom: 0; }
+    .sd3-dr-time span {
+        display: block; font-size: 13px; font-weight: 700; letter-spacing: 1px;
+        text-transform: uppercase; color: var(--gold); margin-bottom: 4px;
     }
 
     /* ==================== 15. FAQ ==================== */
@@ -583,8 +579,6 @@
         .sd3-choose-1 .sd3-choose-img { flex: 1 1 100%; max-width: 100%; }
         .sd3-serv-row, .sd3-rev-grid, .sd3-dent-row,
         .sd3-foot-row { grid-template-columns: 1fr; }
-        .sd3-dr-meta { grid-template-columns: 1fr; }
-        .sd3-dr-meta-col + .sd3-dr-meta-col { padding-left: 0; border-left: none; border-top: 1px solid var(--line); margin-top: 16px; padding-top: 16px; }
         .sd3-award-head { flex-direction: column; gap: 14px; }
         .sd3-award-head h3, .sd3-award-head h2 { font-size: 23px; }
         .sd3-award-years img { width: 68px; }
@@ -608,7 +602,7 @@
         <header class="header-wraper clearfix">
             <div class="top-wraper clearfix">
                 <div class="container clearfix">
-                    <div class="logo"><a href="#"><img src="assets/img/brand/logo-header.png" alt="" title=""></a></div>
+                    <div class="logo"><a href="#"><img src="assets/img/brand/logo-header.webp" alt="" title=""></a></div>
                     <ul class="sd3-topnav">
                         <li><a href="#" class="sd3-topnav-cta">Free E-Consult</a></li>
                         <li><a href="#">Get A Quote</a></li>
@@ -616,8 +610,8 @@
                     </ul>
                     <div class="top-block clearfix">
                         <div class="apppoint-btn dropdown">
-                            <a href="#" class="theme-btn btn-style-one callbtn"><span class="btn-title"><b>Call 070422 11273</b></span></a>
-                            <a class="dropdown-icon" href="#"><img src="assets/img/brand/icon-whatsapp.png" alt=""/></a>
+                            <a href="tel:+917042211273" class="theme-btn btn-style-one callbtn"><span class="btn-title"><b>Call 070422 11273</b></span></a>
+                            <a class="dropdown-icon" href="https://wa.me/917042211273"><img src="assets/img/brand/icon-whatsapp.webp" alt=""/></a>
                         </div>
                     </div>
                 </div>
@@ -795,9 +789,9 @@
                             </div>
                         </div>
                         <div class="sd3-hero-right">
-                            <figure class="sd3-hi sd3-hi-1"><img src="assets/img/hero/award-brett-lee.png" alt="Dr. Prerna receiving an award from Brett Lee"></figure>
-                            <figure class="sd3-hi sd3-hi-2"><img src="assets/img/hero/award-bhagyashree.png" alt="Dr. Prerna receiving an award from Bhagyashree"></figure>
-                            <figure class="sd3-hi sd3-hi-3"><img src="assets/img/hero/award-mouni-roy.png" alt="Dr. Prerna receiving an award from Mouni Roy"></figure>
+                            <figure class="sd3-hi sd3-hi-1"><img src="assets/img/hero/award-brett-lee.webp" alt="Dr. Prerna receiving an award from Brett Lee"></figure>
+                            <figure class="sd3-hi sd3-hi-2"><img src="assets/img/hero/award-bhagyashree.webp" alt="Dr. Prerna receiving an award from Bhagyashree"></figure>
+                            <figure class="sd3-hi sd3-hi-3"><img src="assets/img/hero/award-mouni-roy.webp" alt="Dr. Prerna receiving an award from Mouni Roy"></figure>
                         </div>
                     </div>
                 </div>
@@ -808,27 +802,27 @@
                 <div class="sd3-wrap">
                     <div class="sd3-brands-track">
                         <ul>
-                            <li><img src="assets/img/accreditation/aaid.png" alt="AAID"></li>
-                            <li><img src="assets/img/accreditation/aacd.png" alt="AACD"></li>
-                            <li><img src="assets/img/accreditation/aae.png" alt="AAE"></li>
-                            <li><img src="assets/img/accreditation/bacd.png" alt="BACD"></li>
-                            <li><img src="assets/img/accreditation/fdi.png" alt="FDI"></li>
-                            <li><img src="assets/img/accreditation/iti.png" alt="ITI"></li>
+                            <li><img src="assets/img/accreditation/aaid.webp" alt="AAID"></li>
+                            <li><img src="assets/img/accreditation/aacd.webp" alt="AACD"></li>
+                            <li><img src="assets/img/accreditation/aae.webp" alt="AAE"></li>
+                            <li><img src="assets/img/accreditation/bacd.webp" alt="BACD"></li>
+                            <li><img src="assets/img/accreditation/fdi.webp" alt="FDI"></li>
+                            <li><img src="assets/img/accreditation/iti.webp" alt="ITI"></li>
                             <li><img src="assets/img/accreditation/ida.png" alt="IDA"></li>
-                            <li><img src="assets/img/accreditation/global.png" alt="Global"></li>
-                            <li><img src="assets/img/accreditation/iso.png" alt="ISO"></li>
+                            <li><img src="assets/img/accreditation/global.webp" alt="Global"></li>
+                            <li><img src="assets/img/accreditation/iso.webp" alt="ISO"></li>
                         </ul>
                         <!-- duplicate set: makes the -50% loop seamless -->
                         <ul aria-hidden="true">
-                            <li><img src="assets/img/accreditation/aaid.png" alt=""></li>
-                            <li><img src="assets/img/accreditation/aacd.png" alt=""></li>
-                            <li><img src="assets/img/accreditation/aae.png" alt=""></li>
-                            <li><img src="assets/img/accreditation/bacd.png" alt=""></li>
-                            <li><img src="assets/img/accreditation/fdi.png" alt=""></li>
-                            <li><img src="assets/img/accreditation/iti.png" alt=""></li>
+                            <li><img src="assets/img/accreditation/aaid.webp" alt=""></li>
+                            <li><img src="assets/img/accreditation/aacd.webp" alt=""></li>
+                            <li><img src="assets/img/accreditation/aae.webp" alt=""></li>
+                            <li><img src="assets/img/accreditation/bacd.webp" alt=""></li>
+                            <li><img src="assets/img/accreditation/fdi.webp" alt=""></li>
+                            <li><img src="assets/img/accreditation/iti.webp" alt=""></li>
                             <li><img src="assets/img/accreditation/ida.png" alt=""></li>
-                            <li><img src="assets/img/accreditation/global.png" alt=""></li>
-                            <li><img src="assets/img/accreditation/iso.png" alt=""></li>
+                            <li><img src="assets/img/accreditation/global.webp" alt=""></li>
+                            <li><img src="assets/img/accreditation/iso.webp" alt=""></li>
                         </ul>
                     </div>
                 </div>
@@ -842,27 +836,27 @@
                             <h3>Awarded as the</h3>
                             <h2>Best Dental Clinic in Delhi</h2>
                         </div>
-                        <img class="sd3-award-shield" src="assets/img/awards/service-award-2025.png" alt="Service Award 2025">
+                        <img class="sd3-award-shield" src="assets/img/awards/service-award-2025.webp" alt="Service Award 2025">
                     </div>
 
                     <div class="sd3-award-row">
                         <div class="sd3-award-years">
-                            <img src="assets/img/awards/best-clinic-2021.png" alt="Best Dental Clinic in Rohini 2021">
-                            <img src="assets/img/awards/best-clinic-2022.png" alt="Best Dental Clinic in Rohini 2022">
-                            <img src="assets/img/awards/best-clinic-2025.png" alt="Best Dental Clinic in Rohini 2025">
-                            <img src="assets/img/awards/best-clinic-2026.png" alt="Best Dental Clinic in Rohini 2026">
+                            <img src="assets/img/awards/best-clinic-2021.webp" alt="Best Dental Clinic in Rohini 2021">
+                            <img src="assets/img/awards/best-clinic-2022.webp" alt="Best Dental Clinic in Rohini 2022">
+                            <img src="assets/img/awards/best-clinic-2025.webp" alt="Best Dental Clinic in Rohini 2025">
+                            <img src="assets/img/awards/best-clinic-2026.webp" alt="Best Dental Clinic in Rohini 2026">
                         </div>
 
                         <div class="sd3-award-promises">
                             <div class="sd3-promise-1">
-                                <img class="sd3-seal" src="assets/img/awards/seal-lifetime-warranty.png" alt="">
+                                <img class="sd3-seal" src="assets/img/awards/seal-lifetime-warranty.webp" alt="">
                                 <div class="sd3-promise-txt">
                                     <span>Lifetime warranty</span>
                                     <span>On All Treatments</span>
                                 </div>
                             </div>
                             <div class="sd3-promise-1">
-                                <img class="sd3-seal" src="assets/img/awards/seal-lowest-price.png" alt="">
+                                <img class="sd3-seal" src="assets/img/awards/seal-lowest-price.webp" alt="">
                                 <div class="sd3-promise-txt">
                                     <span>Losest Price</span>
                                     <span>Garanted</span>
@@ -887,14 +881,14 @@
                     </div>
 
                     <div class="sd3-choose-1">
-                        <div class="sd3-choose-img"><img src="assets/img/why-choose-us/best-dentist.gif" alt=""></div>
+                        <div class="sd3-choose-img"><img src="assets/img/why-choose-us/best-dentist.webp" alt=""></div>
                         <div class="sd3-choose-txt">
                             <p>Selecting the ideal dentist and ensuring precise treatment planning is crucial. At Stunning Dentistry, we dedicate ourselves to providing &ldquo;The Best Dentist in Delhi, India&rdquo;, delivering exceptional care with unmatched precision.</p>
                         </div>
                     </div>
 
                     <div class="sd3-choose-1 alt plain">
-                        <div class="sd3-choose-img sd3-choose-img--contain"><img src="assets/img/why-choose-us/advanced-technology.gif" alt=""></div>
+                        <div class="sd3-choose-img sd3-choose-img--contain"><img src="assets/img/why-choose-us/advanced-technology.webp" alt=""></div>
                         <div class="sd3-choose-txt">
                             <p>With access to the world&rsquo;s most advanced dental technologies, we meticulously curate premium materials to ensure absolute treatment success. This commitment empowers us to offer Lifetime Warranties on all our dental services.</p>
                         </div>
@@ -915,25 +909,25 @@
                     <div class="sd3-title"><h2>Our Top services</h2></div>
                     <div class="sd3-serv-row">
                         <div class="sd3-serv-1">
-                            <figure><img src="assets/img/services/teeth-braces.jpg" alt="Teeth Braces"></figure>
+                            <figure><img src="assets/img/services/teeth-braces.webp" alt="Teeth Braces"></figure>
                             <h3>Teeth Braces</h3>
                             <p>Straighten your teeth and achieve a confident, beautiful smile.</p>
                             <a class="sd3-serv-link" href="#">Know more &rarr;</a>
                         </div>
                         <div class="sd3-serv-1">
-                            <figure><img src="assets/img/services/dental-implants.jpg" alt="Dental Implants"></figure>
+                            <figure><img src="assets/img/services/dental-implants.webp" alt="Dental Implants"></figure>
                             <h3>Dental Implants</h3>
                             <p>Replace missing teeth with strong, natural-looking dental implants.</p>
                             <a class="sd3-serv-link" href="#">Know more &rarr;</a>
                         </div>
                         <div class="sd3-serv-1">
-                            <figure><img src="assets/img/services/invisible-aligners.jpg" alt="Clear Aligners"></figure>
+                            <figure><img src="assets/img/services/invisible-aligners.webp" alt="Clear Aligners"></figure>
                             <h3>Clear Aligners</h3>
                             <p>Straighten your smile discreetly with comfortable, nearly invisible aligners.</p>
                             <a class="sd3-serv-link" href="#">Know more &rarr;</a>
                         </div>
                         <div class="sd3-serv-1">
-                            <figure><img src="assets/img/services/root-canal-treatment.jpg" alt="Root Canal Treatment"></figure>
+                            <figure><img src="assets/img/services/root-canal-treatment.webp" alt="Root Canal Treatment"></figure>
                             <h3>Root Canal Treatment</h3>
                             <p>Relieve tooth pain and save your natural tooth with advanced treatment.</p>
                             <a class="sd3-serv-link" href="#">Know more &rarr;</a>
@@ -947,31 +941,31 @@
                 <div class="sd3-wrap">
                     <div class="sd3-price-card">
                         <div class="sd3-price-head">
-                            <h2>Guaranteed <img class="sd3-price-inline-badge" src="assets/img/awards/seal-lowest-price.png" alt="100% Lowest Price"></h2>
+                            <h2>Guaranteed <img class="sd3-price-inline-badge" src="assets/img/awards/seal-lowest-price.webp" alt="100% Lowest Price"></h2>
                             <h3>Lowest Prices</h3>
                         </div>
                         <div class="sd3-price-body">
                             <div class="sd3-price-col">
                                 <div class="sd3-price-item">
-                                    <img class="sd3-price-circ" src="assets/img/treatments/dental-implants.png" alt="Dental Implant">
+                                    <img class="sd3-price-circ" src="assets/img/treatments/dental-implants.webp" alt="Dental Implant">
                                     <span class="sd3-price-label">Dental Implant</span>
                                 </div>
                                 <div class="sd3-price-item">
-                                    <img class="sd3-price-circ" src="assets/img/treatments/full-mouth-rehabilitation.png" alt="Full Mouth Rehabilitation">
+                                    <img class="sd3-price-circ" src="assets/img/treatments/full-mouth-rehabilitation.webp" alt="Full Mouth Rehabilitation">
                                     <span class="sd3-price-label">Full Mouth<br>Rehabilitation</span>
                                 </div>
                             </div>
                             <div class="sd3-price-center">
-                                <img src="assets/img/stats/75off.png" alt="75% OFF">
+                                <img src="assets/img/stats/75off.webp" alt="75% OFF">
                             </div>
                             <div class="sd3-price-col right">
                                 <div class="sd3-price-item right">
                                     <span class="sd3-price-label">TMJ &amp; Orofacial Pain</span>
-                                    <img class="sd3-price-circ" src="assets/img/treatments/tmj-orofacial-pain.png" alt="TMJ &amp; Orofacial Pain">
+                                    <img class="sd3-price-circ" src="assets/img/treatments/tmj-orofacial-pain.webp" alt="TMJ &amp; Orofacial Pain">
                                 </div>
                                 <div class="sd3-price-item right">
                                     <span class="sd3-price-label">Invisible Aligners</span>
-                                    <img class="sd3-price-circ" src="assets/img/treatments/invisible-aligners.png" alt="Invisible Aligners">
+                                    <img class="sd3-price-circ" src="assets/img/treatments/invisible-aligners.webp" alt="Invisible Aligners">
                                 </div>
                             </div>
                         </div>
@@ -983,23 +977,23 @@
             <section class="sd3-banner" id="sd3Banner">
                 <div class="sd3-banner-slides" id="sd3BannerSlides">
                     <div class="sd3-banner-slide active">
-                        <img src="assets/img/new-award/brett-lee.png" alt="Dr. Prerna receiving an award">
+                        <img src="assets/img/new-award/brett-lee.webp" alt="Dr. Prerna receiving an award">
                         <div class="sd3-banner-grad"></div>
                     </div>
                     <div class="sd3-banner-slide">
-                        <img src="assets/img/new-award/Bhagyashree.png" alt="Dr. Prerna receiving an award">
+                        <img src="assets/img/new-award/Bhagyashree.webp" alt="Dr. Prerna receiving an award">
                         <div class="sd3-banner-grad"></div>
                     </div>
                     <div class="sd3-banner-slide">
-                        <img src="assets/img/new-award/mauni.png" alt="Dr. Prerna receiving an award">
+                        <img src="assets/img/new-award/mauni.webp" alt="Dr. Prerna receiving an award">
                         <div class="sd3-banner-grad"></div>
                     </div>
                     <div class="sd3-banner-slide">
-                        <img src="assets/img/new-award/image2.png" alt="Dr. Prerna receiving an award">
+                        <img src="assets/img/new-award/image2.webp" alt="Dr. Prerna receiving an award">
                         <div class="sd3-banner-grad"></div>
                     </div>
                     <div class="sd3-banner-slide">
-                        <img src="assets/img/new-award/image3.png" alt="Dr. Prerna receiving an award">
+                        <img src="assets/img/new-award/image3.webp" alt="Dr. Prerna receiving an award">
                         <div class="sd3-banner-grad"></div>
                     </div>
                 </div>
@@ -1048,14 +1042,14 @@
             <section class="sd3-banner sd3-clinic-banner">
                 <div class="sd3-title" style="text-align:center;padding:40px 0 20px;"><h2><b>Where Smiles Begin</b> &#10084;&#65039;</h2></div>
                 <div class="sd3-banner-slides sd3-clinic-slides" id="sd3ClinicSlides">
-                    <div class="sd3-banner-slide sd3-clinic-slide active"><img src="assets/img/Clinic Images/1.png" alt="Clinic Image 1"></div>
-                    <div class="sd3-banner-slide sd3-clinic-slide"><img src="assets/img/Clinic Images/2.png" alt="Clinic Image 2"></div>
-                    <div class="sd3-banner-slide sd3-clinic-slide"><img src="assets/img/Clinic Images/3.png" alt="Clinic Image 3"></div>
-                    <div class="sd3-banner-slide sd3-clinic-slide"><img src="assets/img/Clinic Images/4.png" alt="Clinic Image 4"></div>
-                    <div class="sd3-banner-slide sd3-clinic-slide"><img src="assets/img/Clinic Images/5.png" alt="Clinic Image 5"></div>
-                    <div class="sd3-banner-slide sd3-clinic-slide"><img src="assets/img/Clinic Images/6.png" alt="Clinic Image 6"></div>
-                    <div class="sd3-banner-slide sd3-clinic-slide"><img src="assets/img/Clinic Images/7.png" alt="Clinic Image 7"></div>
-                    <div class="sd3-banner-slide sd3-clinic-slide"><img src="assets/img/Clinic Images/8.png" alt="Clinic Image 8"></div>
+                    <div class="sd3-banner-slide sd3-clinic-slide active"><img src="assets/img/Clinic Images/1.webp" alt="Clinic Image 1"></div>
+                    <div class="sd3-banner-slide sd3-clinic-slide"><img src="assets/img/Clinic Images/2.webp" alt="Clinic Image 2"></div>
+                    <div class="sd3-banner-slide sd3-clinic-slide"><img src="assets/img/Clinic Images/3.webp" alt="Clinic Image 3"></div>
+                    <div class="sd3-banner-slide sd3-clinic-slide"><img src="assets/img/Clinic Images/4.webp" alt="Clinic Image 4"></div>
+                    <div class="sd3-banner-slide sd3-clinic-slide"><img src="assets/img/Clinic Images/5.webp" alt="Clinic Image 5"></div>
+                    <div class="sd3-banner-slide sd3-clinic-slide"><img src="assets/img/Clinic Images/6.webp" alt="Clinic Image 6"></div>
+                    <div class="sd3-banner-slide sd3-clinic-slide"><img src="assets/img/Clinic Images/7.webp" alt="Clinic Image 7"></div>
+                    <div class="sd3-banner-slide sd3-clinic-slide"><img src="assets/img/Clinic Images/8.webp" alt="Clinic Image 8"></div>
                 </div>
                 <button class="sd3-clinic-arr sd3-clinic-prev" id="sd3ClinicPrev">&#10094;</button>
                 <button class="sd3-clinic-arr sd3-clinic-next" id="sd3ClinicNext">&#10095;</button>
@@ -1076,12 +1070,12 @@
                 <div class="sd3-wrap">
                     <div class="sd3-title"><h2><b>Results You&rsquo;ll Love</b></h2></div>
                     <div class="sd3-grid4 tall">
-                        <figure><img src="assets/img/results/before-after-1.png" alt=""></figure>
-                        <figure><img src="assets/img/results/before-after-2.png" alt=""></figure>
-                        <figure><img src="assets/img/results/before-after-3.png" alt=""></figure>
-                        <figure><img src="assets/img/results/before-after-4.png" alt=""></figure>
-                        <figure><img src="assets/img/results/before-after-5.png" alt=""></figure>
-                        <figure><img src="assets/img/results/before-after-6.png" alt=""></figure>
+                        <figure><img src="assets/img/results/before-after-1.webp" alt=""></figure>
+                        <figure><img src="assets/img/results/before-after-2.webp" alt=""></figure>
+                        <figure><img src="assets/img/results/before-after-3.webp" alt=""></figure>
+                        <figure><img src="assets/img/results/before-after-4.webp" alt=""></figure>
+                        <figure><img src="assets/img/results/before-after-5.webp" alt=""></figure>
+                        <figure><img src="assets/img/results/before-after-6.webp" alt=""></figure>
                     </div>
                 </div>
             </section>
@@ -1092,17 +1086,17 @@
                     <div class="sd3-title"><h2>SuccessFully Completed</h2></div>
                     <div class="sd3-stats-card">
                         <div class="sd3-stats-1">
-                            <div class="sd3-stats-circ"><img src="assets/img/stats/dental-implants.png" alt="Dental Implant"></div>
+                            <div class="sd3-stats-circ"><img src="assets/img/stats/dental-implants.webp" alt="Dental Implant"></div>
                             <h3>7500 +</h3>
                             <p>Dental Implant</p>
                         </div>
                         <div class="sd3-stats-1">
-                            <div class="sd3-stats-circ"><img src="assets/img/stats/invisible-aligners.jpg" alt="Invisible Aligners"></div>
+                            <div class="sd3-stats-circ"><img src="assets/img/stats/invisible-aligners.webp" alt="Invisible Aligners"></div>
                             <h3>3500 +</h3>
                             <p>Invisible Aligners</p>
                         </div>
                         <div class="sd3-stats-1">
-                            <div class="sd3-stats-circ"><img src="assets/img/stats/invisalign.jpg" alt="Invisalign"></div>
+                            <div class="sd3-stats-circ"><img src="assets/img/stats/invisalign.webp" alt="Invisalign"></div>
                             <h3>2000 +</h3>
                             <p>Invisalign</p>
                         </div>
@@ -1116,10 +1110,10 @@
                     <div class="sd3-title"><h2>1000 + <b>Five Star Reviews</b></h2></div>
                     <div class="sd3-rev-card">
                         <div class="sd3-rev-grid">
-                            <div class="sd3-rev-1"><img src="assets/img/5-star/google.png" alt="Google reviews"></div>
-                            <div class="sd3-rev-1"><img src="assets/img/5-star/facebook.png" alt="Facebook reviews"></div>
-                            <div class="sd3-rev-1"><img src="assets/img/5-star/instagram.png" alt="Instagram reviews"></div>
-                            <div class="sd3-rev-1"><img src="assets/img/5-star/practo.png" alt="Practo reviews"></div>
+                            <div class="sd3-rev-1"><img src="assets/img/5-star/google.webp" alt="Google reviews"></div>
+                            <div class="sd3-rev-1"><img src="assets/img/5-star/facebook.webp" alt="Facebook reviews"></div>
+                            <div class="sd3-rev-1"><img src="assets/img/5-star/instagram.webp" alt="Instagram reviews"></div>
+                            <div class="sd3-rev-1"><img src="assets/img/5-star/practo.webp" alt="Practo reviews"></div>
                         </div>
                     </div>
                 </div>
@@ -1127,7 +1121,7 @@
 
             <!-- ============ 12b. FULL-WIDTH AWARD IMAGE ============ -->
             <section class="sd3-fullimg">
-                <img src="assets/img/award-without-text/sunny.jpeg" alt="Dr. Prerna receiving an award">
+                <img src="assets/img/award-without-text/sunny.webp" alt="Dr. Prerna receiving an award">
             </section>
 
             <!-- ============ 13. MEET OUR TOP DENTISTS ============ -->
@@ -1158,22 +1152,16 @@
             <!-- ============ 14. MEET DR. PRERNA ============ -->
             <section class="sd3-sec">
                 <div class="sd3-wrap">
-                    <div class="sd3-title"><h2>Meet <b>Dr. Prerna</b></h2></div>
+                    <div class="sd3-title"><h2>Meet <b>Dr. Prerna Manuja Saini</b></h2></div>
                     <div class="sd3-dr-row">
-                        <div class="sd3-dr-img"><img src="assets/dr-prerna.jpeg" alt="Dr. Prerna"></div>
+                        <div class="sd3-dr-img"><img src="assets/dr-prerna.webp" alt="Dr. Prerna Manuja Saini"></div>
                         <div class="sd3-dr-txt">
-                            <p><strong>Dr. Prerna &ndash; Celebrity Dentist &amp; Smile Design Specialist</strong></p>
-                            <p>Dr. Prerna Manujia Salini is a dedicated Dental Surgeon and Smile Design Specialist known for her patient-focused approach and commitment to creating healthy, confident smiles. Awarded as one of the Best Dentists in Delhi, she combines advanced dental expertise with compassionate care.</p>
+                            <p class="sd3-dr-role">Celebrity Dentist &amp; Smile Design Specialist</p>
+                            <p>Dr. Prerna Manuja Saini is a dedicated Dental Surgeon and Smile Design Specialist known for her patient-focused approach and commitment to creating healthy, confident smiles. Awarded as one of the Best Dentists in Delhi, she combines advanced dental expertise with compassionate care.</p>
                             <p>Beyond dentistry, Dr. Prerna is also actively involved in social work, contributing to the well-being of the community through her efforts. Her philosophy is to make quality dental care comfortable, personalized, and accessible while delivering exceptional treatment outcomes.</p>
                             <div class="sd3-dr-meta">
-                                <div class="sd3-dr-meta-col">
-                                    <h4>ADDRESS :-</h4>
-                                    <p>H-5/18, Main Road, Pocket 5, Sector 16, Rohini, New Delhi &ndash; 110089</p>
-                                </div>
-                                <div class="sd3-dr-meta-col">
-                                    <h4>Timings :-</h4>
-                                    <p>10:00 AM &ndash; 8:00 PM (Open 7 Days)</p>
-                                </div>
+                                <p class="sd3-dr-addr">H-5/18, Main Road, Pocket 5, Sector 16, Rohini, New Delhi &ndash; 110089</p>
+                                <p class="sd3-dr-time"><span>Timings:</span> 10:00 AM &ndash; 8:00 PM (Open 7 Days)</p>
                             </div>
                         </div>
                     </div>
@@ -1221,7 +1209,7 @@
                 <div class="sd3-wrap">
                     <div class="sd3-foot-row">
                         <div>
-                            <div class="sd3-foot-logo"><img src="assets/img/brand/logo.png" alt="Dr. Prerna Dental Hub"></div>
+                            <div class="sd3-foot-logo"><img src="assets/img/brand/logo.webp" alt="Dr. Prerna Dental Hub"></div>
                             <p>Dr. Prerna Dental Hub is a premium dental clinic in Rohini, New Delhi offering painless dentistry, dental implants, aligners and complete smile makeovers with advanced technology and lifetime warranties.</p>
                         </div>
 
@@ -1241,14 +1229,13 @@
                             <h4>Get in Touch!</h4>
                             <ul>
                                 <li><i class="fa fa-phone"></i> <a href="#">070422 11273</a></li>
-                                <li><i class="fa fa-envelope"></i> <a href="#">drprerna@gmail.com</a></li>
+                                <li><i class="fa fa-envelope"></i> <a href="mailto:drprernasainiofficial@gmail.com">drprernasainiofficial@gmail.com</a></li>
                             </ul>
                             <h4 style="margin-top:16px;">Follow us on</h4>
                             <div class="sd3-foot-social">
-                                <a href="#" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
-                                <a href="#" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
-                                <a href="#" aria-label="WhatsApp"><i class="fa fa-whatsapp"></i></a>
-                                <a href="#" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+                                <a href="https://www.facebook.com/Drprernadentalhub" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="https://www.instagram.com/dr.prerna_dental_hub/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                                <a href="https://wa.me/917042211273" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa fa-whatsapp"></i></a>
                             </div>
                         </div>
 
@@ -1362,14 +1349,6 @@
             if ((a.getAttribute('href') || '') === '#') { e.preventDefault(); }
         });
 
-        // Shrink the window past the breakpoint and the mobile build takes over.
-        var mqTimer = null;
-        window.addEventListener('resize', function () {
-            clearTimeout(mqTimer);
-            mqTimer = setTimeout(function () {
-                if (window.innerWidth < 768) { window.location.replace('index-mobile.html'); }
-            }, 250);
-        });
     })();
     </script>
 </body>
