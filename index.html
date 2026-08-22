@@ -62,6 +62,7 @@
     .sd3 li      { margin: 0; padding: 0; background: none; list-style: none; }
     .sd3 a       { text-decoration: none; color: inherit; }
     .sd3 img     { max-width: 100%; height: auto; display: block; border: 0; }
+    .sd3 video   { max-width: 100%; display: block; }
     .sd3 figure  { margin: 0; }
     .sd3 strong  { color: var(--ink); font-weight: 700; }
 
@@ -215,9 +216,11 @@
     /* three overlapping award photos */
     .sd3-hero-right { flex: 1 1 auto; min-width: 0; display: flex; align-items: flex-start; gap: 16px; }
     .sd3-hi { flex: 1 1 0; min-width: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 14px 32px rgba(0,0,0,.20); }
-    .sd3-hi img { width: 100%; height: 400px; object-fit: cover; object-position: 50% 25%; }
+    /* Box matches the source ratio (584x694) exactly, so object-fit has
+       nothing to crop -- all three photos show in full. */
+    .sd3-hi img { width: 100%; height: auto; aspect-ratio: 584 / 694; object-fit: cover; object-position: 50% 25%; display: block; }
     .sd3 .sd3-hi-1 { z-index: 1; }
-    .sd3 .sd3-hi-2 { z-index: 2; margin-top: 76px; }
+    .sd3 .sd3-hi-2 { z-index: 2; margin-top: 48px; }
     .sd3 .sd3-hi-3 { z-index: 3; }
 
     /* ==================== 2. ACCREDITATION STRIP ==================== */
@@ -533,13 +536,15 @@
         .header-wraper .container { padding-left: 32px; padding-right: 32px; }
         .sd3-hero-row { flex-direction: column; }
         .sd3-hero-left, .sd3-hero-right { flex: 1 1 100%; max-width: 100%; }
-        .sd3-hi img { height: 240px; }
+        .sd3 .sd3-hero-right { gap: 10px; }
         .sd3 .sd3-hi-2 { margin: 40px -18px 0 -18px; }
         .sd3-grid4 img { height: 200px; }
         .sd3-grid4.tall { grid-template-columns: repeat(2, 1fr); }
         .sd3-grid4.tall img { height: auto; aspect-ratio: 1 / 1; }
         .sd3-dent-1 img { height: 300px; }
         .sd3-choose-1 .sd3-choose-img { flex: 0 0 260px; max-width: 260px; }
+        .sd3-choose-1.braces-card .sd3-choose-img { flex: 0 0 260px; max-width: 260px; }
+        .sd3-choose-1.braces-card { padding: 22px 24px; gap: 24px; }
         .sd3-award-row { flex-wrap: wrap; justify-content: center; gap: 40px; }
         .sd3-award-years { justify-content: center; flex-wrap: wrap; gap: 16px; }
         .sd3-award-years img { width: 86px; }
@@ -565,16 +570,45 @@
         .sd3-wrap { padding: 0 20px; }
         .header-wraper .container { padding-left: 20px; padding-right: 20px; }
         .sd3-title h2, .sd3-award-head h2, .sd3-dent-head h2 { font-size: 26px; }
+        .sd3-cons-title h2 { font-size: 24px; }
         .sd3-hero h1 { font-size: 36px; }
         .sd3-hero .sd3-tag { font-size: 17px; }
-        .sd3-hi img { height: 150px; }
+        .sd3 .sd3-hero-right { gap: 8px; }
         .sd3 .sd3-hi-2 { margin: 24px -10px 0 -10px; }
         .sd3-grid4 { grid-template-columns: repeat(2, 1fr); }
         .sd3-grid4 img, .sd3-grid4.tall img { height: 170px; }
         .sd3-choose-1 { flex-direction: column; }
+        /* .alt sets row-reverse at (0,2,0) and outranks the column rule above,
+           so both .alt cards stayed side-by-side and crushed their media to
+           ~31px. Restate it at matching specificity. */
+        .sd3-choose-1.alt { flex-direction: column; }
         .sd3-choose-1 .sd3-choose-img { flex: 1 1 100%; max-width: 100%; }
-        .sd3-serv-row, .sd3-rev-grid, .sd3-dent-row,
+        /* .braces-card wins on specificity (0,3,0) over the plain
+           .sd3-choose-1 .sd3-choose-img rule above, so its 380px had to be
+           unset explicitly or the video overflowed the card on phones. */
+        .sd3-choose-1.braces-card .sd3-choose-img { flex: 1 1 100%; max-width: 100%; }
+        .sd3-choose-1.braces-card { padding: 18px; gap: 20px; }
+        .sd3-serv-row, .sd3-dent-row,
         .sd3-foot-row { grid-template-columns: 1fr; }
+        /* Four review badges stacked ran 835px tall; 2x2 halves that. */
+        .sd3-rev-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .sd3-rev-1 { padding: 10px; }
+        .sd3-rev-1 img { height: 74px; }
+        .sd3-rev-card { padding: 16px; }
+
+        /* Touch targets. These links sit at 14-18px tall, which is well under
+           what a fingertip can hit reliably. Pad them out to ~40px; the text
+           itself is unchanged, only the tappable box grows. */
+        .sd3-foot li a { display: inline-block; padding: 10px 0; line-height: 1.3; }
+        .sd3-serv-1 .sd3-serv-link { display: inline-block; padding: 10px 0 2px; }
+        .sd3-faq-foot a { display: inline-block; padding: 10px 4px; }
+        .sd3-foot-social a { width: 40px; height: 40px; font-size: 15px; }
+        /* Dot stays 10px visually; padding widens the hit area to 34px. */
+        .sd3-clinic-dot {
+            width: 10px; height: 10px; padding: 12px; box-sizing: content-box;
+            background-clip: content-box;
+        }
+        .sd3-clinic-dots { gap: 0; }
         .sd3-award-head { flex-direction: column; gap: 14px; }
         .sd3-award-head h3, .sd3-award-head h2 { font-size: 23px; }
         .sd3-award-years img { width: 68px; }
