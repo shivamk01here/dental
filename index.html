@@ -208,13 +208,11 @@
         width: 26px; height: 26px; border-radius: 50%; border: 1px solid currentColor;
         display: flex; align-items: center; justify-content: center; font-size: 12px;
     }
-    .sd3-hero-cta .sd3-freecon {
-        font-family: Georgia, 'Times New Roman', serif; font-size: 15px; color: #3FA845;
-        white-space: nowrap;
-    }
 
     /* three overlapping award photos */
     .sd3-hero-right { flex: 1 1 auto; min-width: 0; display: flex; align-items: flex-start; gap: 16px; }
+    /* Slider dots are phone-only; hidden by default. */
+    .sd3-hero-dots { display: none; }
     .sd3-hi { flex: 1 1 0; min-width: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 14px 32px rgba(0,0,0,.20); }
     .sd3-hi img { width: 100%; height: 400px; object-fit: cover; object-position: 50% 25%; }
     .sd3 .sd3-hi-1 { z-index: 1; }
@@ -571,8 +569,26 @@
         .sd3-cons-title h2 { font-size: 24px; }
         .sd3-hero h1 { font-size: 36px; }
         .sd3-hero .sd3-tag { font-size: 17px; }
-        .sd3-hi img { height: 150px; }
-        .sd3 .sd3-hi-2 { margin: 24px -10px 0 -10px; }
+        /* Hero photos become a swipeable slider on phones. Three thumbs side
+           by side left each only ~113px wide, too small to make out; each card
+           now fills most of the screen and snaps into place. */
+        .sd3-hero-right {
+            overflow-x: auto; scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            gap: 12px; padding-bottom: 4px;
+            scrollbar-width: none; -ms-overflow-style: none;
+        }
+        .sd3-hero-right::-webkit-scrollbar { display: none; }
+        .sd3-hi { flex: 0 0 80%; scroll-snap-align: center; }
+        .sd3-hi img { height: 300px; }
+        /* the staggered offset only makes sense in the side-by-side collage */
+        .sd3 .sd3-hi-2 { margin: 0; }
+        .sd3-hero-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
+        .sd3-hero-dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--gold2); opacity: .4; transition: opacity .25s, background .25s;
+        }
+        .sd3-hero-dot.active { opacity: 1; background: var(--gold); }
         .sd3-grid4 { grid-template-columns: repeat(2, 1fr); }
         .sd3-grid4 img, .sd3-grid4.tall img { height: 170px; }
         .sd3-choose-1 { flex-direction: column; }
@@ -610,10 +626,13 @@
         .sd3-award-head { flex-direction: column; gap: 14px; }
         .sd3-award-head h3, .sd3-award-head h2 { font-size: 23px; }
         .sd3-award-years img { width: 68px; }
-        .sd3-award-promises { flex-direction: column; gap: 34px; width: 100%; }
-        .sd3-promise-1 { width: 100%; padding: 14px 18px 14px 52px; min-height: 84px; }
-        .sd3 .sd3-seal { left: -30px; width: 62px; height: 62px; }
-        .sd3-promise-txt span { font-size: 17px; }
+        .sd3-award-promises { flex-direction: column; gap: 20px; width: 100%; }
+        .sd3-promise-1 {
+            width: 100%; padding: 16px 18px 16px 18px; min-height: 0;
+            display: flex; flex-direction: row; align-items: center; gap: 16px;
+        }
+        .sd3 .sd3-seal { position: static; width: 56px; height: 56px; flex: 0 0 56px; }
+        .sd3-promise-txt span { font-size: 15px; white-space: normal; }
         .sd3-stats-circ { width: 80px; height: 80px; }
         .sd3-cons-btns { flex-direction: column; align-items: center; }
         .sd3-price-card { padding: 28px 18px 32px; }
@@ -726,7 +745,7 @@
                                         </li>
                                         <li class="dropdown"><a href="#">General Dentistry</a>
                                             <ul>
-                                                <li><a href="#">Tooth Colored Fillings</a></li>
+                                                <li><a href="tooth-colored-fillings.html">Tooth Colored Fillings</a></li>
                                                 <li><a href="#">Composite Bonding</a></li>
                                                 <li><a href="#">Cleaning &amp; Polishing</a></li>
                                                 <li><a href="#">Orthodontic Treatments</a></li>
@@ -813,13 +832,19 @@
                             <div class="sd3-hero-cta">
                                 <a class="sd3-btn sq" href="appointment.html">Book Your Appointment &rarr;</a>
                                 <a class="sd3-call" href="tel:+917042211273"><i class="fa fa-phone"></i> Call Now</a>
-                                <span class="sd3-freecon">Free Consultation Available</span>
                             </div>
                         </div>
                         <div class="sd3-hero-right">
                             <figure class="sd3-hi sd3-hi-1"><img src="assets/img/hero/award-brett-lee.webp" alt="Dr. Prerna receiving an award from Brett Lee"></figure>
                             <figure class="sd3-hi sd3-hi-2"><img src="assets/img/hero/award-bhagyashree.webp" alt="Dr. Prerna receiving an award from Bhagyashree"></figure>
                             <figure class="sd3-hi sd3-hi-3"><img src="assets/img/hero/award-mouni-roy.webp" alt="Dr. Prerna receiving an award from Mouni Roy"></figure>
+                        </div>
+                        <!-- Slider dots: CSS hides them above 640px, where the
+                             three photos sit side by side as before. -->
+                        <div class="sd3-hero-dots" id="sd3HeroDots" aria-hidden="true">
+                            <span class="sd3-hero-dot active"></span>
+                            <span class="sd3-hero-dot"></span>
+                            <span class="sd3-hero-dot"></span>
                         </div>
                     </div>
                 </div>
@@ -1372,6 +1397,56 @@
             if ((a.getAttribute('href') || '') === '#') { e.preventDefault(); }
         });
 
+
+        /* ---- Hero photo slider (phones only) --------------------------------
+           The slider itself is pure CSS scroll-snap, so swiping works with no
+           JS at all. This only lights up the dot matching the visible card.
+           All measurements use getBoundingClientRect: the strip is statically
+           positioned, so offsetLeft would be measured from a different
+           ancestor than scrollLeft and the two would not line up. */
+        (function () {
+            var strip = document.querySelector('.sd3-hero-right');
+            var dots  = document.querySelectorAll('#sd3HeroDots .sd3-hero-dot');
+            if (!strip || !dots.length) { return; }
+
+            var cards = strip.querySelectorAll('.sd3-hi');
+            var tick  = null;
+
+            function nearestCard() {
+                var sr = strip.getBoundingClientRect();
+                var mid = sr.left + sr.width / 2, best = 0, min = Infinity;
+                for (var i = 0; i < cards.length; i++) {
+                    var r = cards[i].getBoundingClientRect();
+                    var d = Math.abs((r.left + r.width / 2) - mid);
+                    if (d < min) { min = d; best = i; }
+                }
+                return best;
+            }
+
+            function syncDots() {
+                var best = nearestCard();
+                for (var j = 0; j < dots.length; j++) {
+                    dots[j].classList.toggle('active', j === best);
+                }
+            }
+
+            strip.addEventListener('scroll', function () {
+                if (tick) { return; }
+                tick = requestAnimationFrame(function () { tick = null; syncDots(); });
+            }, { passive: true });
+
+            // Tapping a dot brings that card into view.
+            for (var k = 0; k < dots.length; k++) {
+                (function (idx) {
+                    dots[idx].addEventListener('click', function () {
+                        if (!cards[idx]) { return; }
+                        cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                    });
+                })(k);
+            }
+
+            syncDots();
+        })();
     })();
     </script>
 </body>

@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tooth-Colored Fillings in Delhi | Dr. Prerna Dental Hub</title>
+<meta name="description" content="Tooth-colored fillings repair cavities while keeping your smile looking natural. Shade-matched composite bonding at Dr. Prerna Dental Hub, Rohini Delhi.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="shortcut icon" href="assets/favicon.webp" type="image/png">
+<link rel="icon" href="assets/favicon.webp" type="image/png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap">
+
+<!-- Original site stylesheets: keep the header pixel-identical to index.html -->
+<link rel="stylesheet" href="assets/css/font-awesome.css" type="text/css" media="all">
+<link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="assets/css/responsive-style.css" type="text/css" media="all" />
+<link rel="stylesheet" href="assets/css/header-footer-style.css" type="text/css" media="all" />
+
+<script type="text/javascript" src="assets/js/jquery.js"></script>
+
+<style>
+/* ==========================================================================
+   Tooth-Colored Fillings.
+
+   Layout and rhythm follow the design brief — flat surfaces, no drop shadows,
+   pill buttons, alternating warm bands, generous section spacing.
+   Colour and type are the SITE's own, matching index.html: the gold/cream
+   palette and Georgia, not the brief's teal-and-mono scheme.
+   ========================================================================== */
+
+/* ---------- header: same rules index.html applies to the shared header --- */
+
+.header-wraper .container { width: 100%; max-width: 1200px; padding-left: 72px; padding-right: 72px; }
+.header-wraper .top-wraper .container { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+.header-wraper .top-wraper .logo { float: none; flex: 0 0 auto; }
+.header-wraper .top-wraper .top-block { float: none; margin: 0; flex: 0 0 auto; }
+.sd3-topnav {
+    display: flex; align-items: center; gap: 34px; flex: 1 1 auto;
+    justify-content: center; list-style: none; margin: 0; padding: 0;
+}
+.sd3-topnav li { margin: 0; padding: 0; }
+.sd3-topnav a {
+    color: #f1e6d0; font-size: 14px; font-weight: 600; white-space: nowrap;
+    font-family: Georgia, 'Times New Roman', serif; transition: color .2s;
+}
+.sd3-topnav a:hover { color: #e5aa43; }
+.sd3-topnav a.sd3-topnav-cta {
+    color: #fff; background: linear-gradient(90deg, #c4912e 0%, rgba(196,145,46,0) 100%);
+    padding: 10px 34px 10px 18px; border-radius: 4px; font-weight: 700;
+}
+.sd3-topnav a.sd3-topnav-cta:hover { color: #fff; }
+@media (max-width: 1100px) { .sd3-topnav { display: none; } }
+
+@media (min-width: 992px) {
+    .header-wraper .main-box { display: flex; align-items: center; justify-content: center; width: 100%; }
+    .header-wraper .nav-outer { flex: 1 1 auto; display: flex; justify-content: center; min-width: 0; }
+    .header-wraper .main-menu { float: none; width: 100%; max-width: 100%; }
+    .header-wraper .main-menu .navigation { display: flex; justify-content: center; align-items: center; flex-wrap: nowrap; width: 100%; }
+    .header-wraper .main-menu .navigation > li { float: none; flex: 0 1 auto; }
+    .header-wraper .main-menu .navigation > li > a {
+        padding: 8px clamp(4px, 0.9vw, 11px);
+        font-size: clamp(9.5px, 0.78vw, 12px) !important;
+        letter-spacing: clamp(0.4px, 0.14vw, 2.7px);
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 991px) {
+    .header-wraper .container { padding-left: 32px; padding-right: 32px; }
+}
+@media (max-width: 640px) {
+    .header-wraper .container { padding-left: 20px; padding-right: 20px; }
+}
+
+/* ---------- page -------------------------------------------------------- */
+
+.tcf {
+    /* identical tokens to .sd3 on index.html */
+    --cream:  #FDF8EF;
+    --cream2: #FAF2E1;
+    --gold:   #C4912E;
+    --gold2:  #E3C57F;
+    --ink:    #1E1B17;
+    --muted:  #6E675D;
+    --line:   #EADCC0;
+    --green:  #0F4A3A;
+
+    --page-max: 1200px;
+    --radius-card: 12px;
+    --radius-btn: 48px;
+
+    --font-serif: Georgia, 'Times New Roman', serif;
+    --font-ui: 'Poppins', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+
+    background: #fff;
+    color: var(--ink);
+    font-family: var(--font-serif);
+    font-size: 16px;
+    line-height: 1.75;
+    overflow-x: hidden;
+    padding-top: 141px; /* replaced at runtime by the measured header height */
+}
+
+.tcf, .tcf *, .tcf *::before, .tcf *::after { box-sizing: border-box; }
+
+.tcf img { max-width: 100%; height: auto; display: block; border: 0; }
+.tcf a { color: inherit; text-decoration: none; }
+.tcf ul { list-style: none; margin: 0; padding: 0; }
+.tcf li { margin: 0; padding: 0; background: none; list-style: none; }
+.tcf h1, .tcf h2, .tcf h3, .tcf h4, .tcf h5 {
+    margin: 0; padding: 0; font-weight: 400;
+    font-family: var(--font-serif); color: var(--ink);
+    text-transform: none; letter-spacing: 0; background: none; line-height: 1.25;
+}
+.tcf p { margin: 0; }
+.tcf button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+
+.tcf-wrap { width: 100%; max-width: var(--page-max); margin: 0 auto; padding: 0 72px; }
+
+/* ---------- type -------------------------------------------------------- */
+
+/* Section label — plain spaced small caps. No leading dot, no monospace. */
+.tcf-eyebrow {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+
+.tcf-h1 { font-size: clamp(32px, 5.4vw, 56px); line-height: 1.14; font-weight: 400; }
+.tcf-h2 { font-size: clamp(26px, 4.2vw, 40px); line-height: 1.2; font-weight: 400; }
+.tcf-h1 b, .tcf-h2 b { font-weight: 700; color: var(--gold); }
+
+.tcf-lede { font-size: clamp(15.5px, 1.5vw, 17px); line-height: 1.8; color: var(--muted); }
+.tcf-body p { font-size: 16px; line-height: 1.85; color: #3a3530; }
+.tcf-body p + p { margin-top: 16px; }
+
+.tcf-rule { width: 58px; height: 3px; background: var(--gold); border-radius: 2px; margin-top: 18px; }
+
+/* ---------- buttons ----------------------------------------------------- */
+
+.tcf-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .2px;
+    padding: 14px 30px;
+    border-radius: var(--radius-btn);
+    border: 1.5px solid transparent;
+    transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+    text-align: center;
+    line-height: 1.2;
+}
+.tcf-btn-solid { background: var(--gold); color: #fff; }
+.tcf-btn-solid:hover { background: #A97A14; }
+.tcf-btn-ghost { background: transparent; color: var(--ink); border-color: var(--gold); }
+.tcf-btn-ghost:hover { background: var(--gold); color: #fff; }
+.tcf-btn-block { width: 100%; }
+
+/* ---------- hero -------------------------------------------------------- */
+
+.tcf-hero { padding: clamp(34px, 5vw, 60px) 0 0; background: #fff; }
+.tcf-hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: clamp(28px, 5vw, 60px);
+    align-items: center;
+}
+.tcf-crumb {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    font-family: var(--font-ui);
+    font-size: 12.5px; letter-spacing: .3px;
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+.tcf-crumb a:hover { color: var(--gold); }
+.tcf-crumb .sep { color: var(--gold2); }
+.tcf-hero h1 { margin: 12px 0 18px; }
+.tcf-hero .tcf-lede { max-width: 54ch; }
+.tcf-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.tcf-hero-figure {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--cream);
+}
+.tcf-hero-figure img { width: 100%; height: clamp(240px, 33vw, 380px); object-fit: cover; }
+
+.tcf-stats {
+    margin-top: clamp(34px, 5vw, 54px);
+    background: var(--cream);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+}
+.tcf-stats-inner { display: flex; flex-wrap: wrap; }
+.tcf-stat {
+    flex: 1 1 200px;
+    padding: 22px 24px;
+    display: flex; flex-direction: column; gap: 3px;
+    border-right: 1px solid var(--line);
+}
+.tcf-stat:last-child { border-right: 0; }
+.tcf-stat strong { font-family: var(--font-serif); font-size: 24px; font-weight: 700; color: var(--gold); }
+.tcf-stat span {
+    font-family: var(--font-ui);
+    font-size: 12px; font-weight: 500;
+    letter-spacing: 1.3px; text-transform: uppercase; color: var(--muted);
+}
+
+/* ---------- layout ------------------------------------------------------ */
+
+.tcf-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: clamp(32px, 5vw, 60px);
+    padding: clamp(48px, 7vw, 84px) 0;
+    align-items: start;
+}
+.tcf-section + .tcf-section { margin-top: clamp(44px, 6vw, 72px); }
+.tcf-section-head { margin-bottom: 26px; }
+.tcf-section-head .tcf-h2 { margin-top: 10px; }
+
+.tcf-benefits {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 30px;
+}
+.tcf-benefit {
+    display: flex; gap: 14px;
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: 22px;
+}
+.tcf-benefit-icon {
+    flex: 0 0 auto;
+    width: 44px; height: 44px; border-radius: 10px;
+    background: #fff; border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+}
+.tcf-benefit-icon img { width: 22px; height: 22px; }
+.tcf-benefit h4 { font-family: var(--font-ui); font-size: 15px; font-weight: 600; line-height: 1.35; margin-bottom: 5px; }
+.tcf-benefit p { font-size: 14.5px; line-height: 1.6; color: var(--muted); }
+
+.tcf-steps { margin-top: 28px; display: flex; flex-direction: column; gap: 14px; }
+.tcf-step {
+    display: flex; gap: 18px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: 22px 24px;
+}
+.tcf-step-num {
+    flex: 0 0 auto;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--gold); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-ui); font-size: 15px; font-weight: 700;
+}
+.tcf-step h4 { font-size: 19px; font-weight: 700; margin-bottom: 6px; }
+.tcf-step p { font-size: 15px; line-height: 1.75; color: var(--muted); }
+
+.tcf-faq { margin-top: 26px; display: flex; flex-direction: column; gap: 10px; }
+.tcf-faq-item {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+}
+.tcf-faq-q {
+    width: 100%;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    text-align: left; padding: 18px 20px;
+    font-family: var(--font-ui);
+    font-size: 15px; font-weight: 600;
+    color: var(--ink); line-height: 1.45;
+}
+.tcf-faq-icon {
+    flex: 0 0 auto;
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #fff; border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold);
+    font-family: var(--font-ui); font-size: 17px; line-height: 1;
+    transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+.tcf-faq-item.open .tcf-faq-icon { background: var(--gold); color: #fff; border-color: var(--gold); transform: rotate(45deg); }
+.tcf-faq-a { max-height: 0; overflow: hidden; transition: max-height .28s ease; }
+.tcf-faq-a p { padding: 0 20px 18px; font-size: 15px; line-height: 1.8; color: var(--muted); }
+
+/* ---------- sidebar ----------------------------------------------------- */
+
+/* Sticks alongside the main column and releases at the end of .tcf-layout,
+   which is now exactly where the FAQ band begins. --hdr-h is measured at
+   runtime so the card never slides under the fixed header. */
+.tcf-sidebar {
+    position: sticky;
+    top: calc(var(--hdr-h, 141px) + 20px);
+    display: flex; flex-direction: column; gap: 16px;
+}
+.tcf-side-card {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-card);
+    padding: 24px;
+}
+.tcf-side-card.warm { background: var(--cream2); }
+.tcf-side-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.tcf-side-card h4 {
+    font-family: var(--font-ui);
+    font-size: 12.5px; font-weight: 600;
+    letter-spacing: 1.6px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 14px;
+}
+.tcf-side-card > p { font-size: 14.5px; line-height: 1.7; color: var(--muted); margin-bottom: 16px; }
+.tcf-side-card .tcf-btn + .tcf-btn { margin-top: 9px; }
+.tcf-divider { border: 0; border-top: 1px solid var(--line); margin: 20px 0; }
+
+.tcf-quick { display: flex; flex-direction: column; gap: 11px; }
+.tcf-quick-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.tcf-quick-row .k {
+    font-family: var(--font-ui);
+    font-size: 11.5px; font-weight: 500;
+    letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted);
+}
+.tcf-quick-row .v { font-family: var(--font-ui); font-size: 14px; font-weight: 600; color: var(--ink); }
+
+.tcf-related { display: flex; flex-direction: column; }
+.tcf-related a {
+    display: flex; align-items: center; gap: 9px;
+    padding: 12px 0;
+    font-size: 15px; color: var(--ink);
+    border-bottom: 1px solid var(--line);
+    transition: color .18s ease, padding-left .18s ease;
+}
+.tcf-related a:last-child { border-bottom: 0; }
+.tcf-related a::before { content: '\203A'; color: var(--gold); font-size: 18px; line-height: 1; }
+.tcf-related a:hover { color: var(--gold); padding-left: 4px; }
+
+.tcf-warranty { display: flex; gap: 14px; align-items: flex-start; }
+.tcf-warranty img { width: 46px; height: 46px; flex: 0 0 auto; object-fit: contain; }
+.tcf-warranty h5 { font-family: var(--font-ui); font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.tcf-warranty p { font-size: 14px; line-height: 1.65; color: var(--muted); }
+
+/* ---------- bands ------------------------------------------------------- */
+
+.tcf-band { padding: clamp(48px, 7vw, 84px) 0; }
+.tcf-band-warm { background: var(--cream); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.tcf-band-head { text-align: center; margin-bottom: 38px; }
+.tcf-band-head .tcf-h2 { margin-top: 10px; }
+.tcf-band-head .tcf-rule { margin: 18px auto 0; }
+
+/* Video block. aspect-ratio holds the 16:9 box without the padding-bottom
+   hack, so it scales cleanly at every width. */
+.tcf-video {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--ink);
+    cursor: pointer;
+}
+.tcf-video iframe { width: 100%; height: 100%; border: 0; display: block; }
+.tcf-video-poster {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    filter: brightness(.62) saturate(.9);
+    transition: transform .5s ease, filter .3s ease;
+}
+.tcf-video:hover .tcf-video-poster { transform: scale(1.03); filter: brightness(.55) saturate(.95); }
+
+.tcf-video-play {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(64px, 8vw, 88px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    transition: transform .22s ease, background-color .22s ease;
+}
+.tcf-video-play::after {
+    /* expanding halo on hover */
+    content: '';
+    position: absolute; inset: -14px;
+    border: 1px solid rgba(255,255,255,.45);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity .28s ease, inset .28s ease;
+}
+.tcf-video:hover .tcf-video-play { transform: translate(-50%, -50%) scale(1.07); background: #D9A63A; }
+.tcf-video:hover .tcf-video-play::after { opacity: 1; inset: -20px; }
+
+/* triangle drawn in CSS so there is no icon dependency */
+.tcf-video-tri {
+    width: 0; height: 0;
+    margin-left: 5px;
+    border-top: 13px solid transparent;
+    border-bottom: 13px solid transparent;
+    border-left: 21px solid #fff;
+}
+
+.tcf-video-label {
+    position: absolute;
+    left: 50%; bottom: clamp(16px, 3vw, 28px);
+    transform: translateX(-50%);
+    font-family: var(--font-ui);
+    font-size: 12px; font-weight: 600;
+    letter-spacing: 1.4px; text-transform: uppercase;
+    color: #fff;
+    white-space: nowrap;
+    opacity: .9;
+}
+.tcf-ba-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.tcf-ba-card { border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--line); background: #fff; }
+.tcf-ba-card img { width: 100%; height: 250px; object-fit: cover; }
+
+.tcf-doctor-grid {
+    display: grid;
+    grid-template-columns: 360px minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 48px);
+    align-items: start;
+}
+.tcf-doctor-photo { border-radius: var(--radius-card); overflow: hidden; border: 1px solid var(--line); }
+.tcf-doctor-role { font-size: 18px; font-weight: 700; color: var(--gold); margin-bottom: 14px; letter-spacing: .2px; }
+.tcf-doctor-body p { font-size: 16px; line-height: 1.85; color: #3a3530; }
+.tcf-doctor-body p + p { margin-top: 16px; }
+.tcf-doctor-meta { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); display: grid; gap: 16px; }
+.tcf-doctor-meta .k {
+    display: block;
+    font-family: var(--font-ui);
+    font-size: 12.5px; font-weight: 600;
+    letter-spacing: 1.4px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 4px;
+}
+.tcf-doctor-meta .v {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 15px; line-height: 1.7; color: #3a3530; letter-spacing: .2px;
+}
+
+/* ---------- closing CTA -------------------------------------------------
+   A warm cream band, not gold and not ink.
+
+   Gold failed on contrast: dark copy over #B8871F measured 3.96:1 for body
+   text and 3.54:1 for the eyebrow, both under the 4.5:1 minimum, and the
+   deeper end of the gradient dragged even the heading to 3.84:1. Lightening
+   the surface fixes every one of those in one move, and a light panel also
+   separates from the near-black footer far more strongly than gold did.  */
+.tcf-cta {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: linear-gradient(170deg, #FDF8EF 0%, #F6EBD6 100%);
+    padding: clamp(56px, 8vw, 100px) 0;
+    text-align: center;
+    border-top: 1px solid var(--line);
+}
+/* engraved rings, echoing the circular step numbers earlier on the page */
+.tcf-cta-ring {
+    position: absolute;
+    right: -120px; bottom: -150px;
+    width: 400px; height: 400px;
+    border: 1px solid rgba(196,145,46,.22);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+.tcf-cta-ring::after {
+    content: '';
+    position: absolute; inset: 46px;
+    border: 1px solid rgba(196,145,46,.16);
+    border-radius: 50%;
+}
+.tcf-cta-inner { position: relative; }
+.tcf-cta .tcf-eyebrow { color: #7A5A0E; }          /* 5.2:1 on cream */
+.tcf-cta h2 { color: var(--ink); margin: 14px 0 18px; }
+.tcf-cta h2 b { color: #8A6410; }                   /* 4.4:1, heading size */
+.tcf-cta p {
+    max-width: 60ch; margin: 0 auto;
+    color: #4A443B;                                  /* 8.2:1 */
+    font-size: clamp(15px, 1.5vw, 17.5px); line-height: 1.8;
+}
+.tcf-cta-actions {
+    display: flex; flex-wrap: wrap; gap: 14px;
+    justify-content: center; margin-top: 34px;
+}
+
+/* primary — solid ink, arrow slides on hover */
+.tcf-cta-primary {
+    background: var(--gold);
+    color: #fff;
+    padding: 16px 34px;
+    border-color: var(--gold);
+}
+.tcf-cta-primary:hover { background: #A87A24; border-color: #A87A24; }
+.tcf-cta-arrow { display: inline-block; transition: transform .22s ease; }
+.tcf-cta-primary:hover .tcf-cta-arrow { transform: translateX(4px); }
+
+/* secondary — gold outline that fills on hover */
+.tcf-cta-secondary {
+    background: #fff;
+    color: var(--ink);
+    border-color: var(--gold);
+    padding: 16px 30px;
+}
+.tcf-cta-secondary:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+/* trust row. Scoped under .tcf so it outranks '.tcf ul { margin: 0 }', which
+   was otherwise stripping both the top margin and the auto centring. */
+.tcf .tcf-cta-trust {
+    display: flex; flex-wrap: wrap;
+    justify-content: center; align-items: center;
+    gap: 10px 28px;
+    margin: 34px auto 0;
+    padding-top: 24px;
+    max-width: 860px;
+    border-top: 1px solid var(--line);
+    font-family: var(--font-ui);
+    font-size: 12.5px; font-weight: 600;
+    letter-spacing: 1.1px; text-transform: uppercase;
+    color: #5A5349;
+}
+.tcf-cta-trust li { position: relative; }
+.tcf-cta-trust li + li::before {
+    content: '';
+    position: absolute; left: -15px; top: 50%;
+    width: 3px; height: 3px; border-radius: 50%;
+    background: var(--gold);
+    transform: translateY(-50%);
+}
+
+
+/* FAQ is a full-width band now; keep the answers to a readable measure. */
+.tcf-faq-band .tcf-faq { max-width: 860px; margin-left: auto; margin-right: auto; }
+
+/* ---------- footer ------------------------------------------------------ */
+
+.tcf-foot { background: var(--ink); color: #cacaca; padding: 56px 0 0; }
+.tcf-foot-row { display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 36px; }
+.tcf-foot h4 {
+    font-family: var(--font-ui);
+    font-size: 12.5px; font-weight: 600;
+    letter-spacing: 1.6px; text-transform: uppercase;
+    color: var(--gold2); margin-bottom: 14px;
+}
+.tcf-foot p, .tcf-foot li a { font-size: 14px; line-height: 1.9; color: #cacaca; }
+.tcf-foot li a { display: inline-block; padding: 4px 0; }
+.tcf-foot li a:hover, .tcf-foot p a:hover { color: var(--gold2); }
+.tcf-foot-logo img { height: 48px; width: auto; margin-bottom: 14px; }
+.tcf-foot-social { display: flex; gap: 10px; margin-top: 14px; }
+.tcf-foot-social a {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(255,255,255,.10);
+    display: flex; align-items: center; justify-content: center;
+    color: #e5aa43; font-size: 15px;
+    transition: background-color .18s ease, color .18s ease;
+}
+.tcf-foot-social a:hover { background: #C9971F; color: var(--ink); }
+.tcf-foot-bar {
+    margin-top: 44px; border-top: 1px solid rgba(241,198,122,.22);
+    padding: 16px 0; text-align: center; font-size: 13px; color: #8d8580;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1080px) {
+    .tcf-layout { grid-template-columns: minmax(0, 1fr); }
+    .tcf-sidebar { position: static; }
+    .tcf-foot-row { grid-template-columns: 1fr 1fr; gap: 30px; }
+}
+
+@media (max-width: 991px) {
+    .tcf-wrap { padding: 0 32px; }
+}
+
+@media (max-width: 900px) {
+    .tcf-hero-grid { grid-template-columns: 1fr; }
+    .tcf-hero-figure { order: -1; }
+    .tcf-doctor-grid { grid-template-columns: 1fr; }
+    .tcf-doctor-photo { max-width: 420px; }
+    .tcf-ba-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    /* Touch range: these links render ~18px tall, under what a finger can hit. */
+    .tcf-crumb a, .tcf-crumb span { padding: 6px 0; }
+    .tcf-foot p a { display: inline-block; padding: 7px 0; }
+}
+
+@media (max-width: 680px) {
+    .tcf-wrap { padding: 0 20px; }
+    .tcf-benefits { grid-template-columns: 1fr; }
+    .tcf-ba-grid { grid-template-columns: 1fr; }
+    .tcf-ba-card img { height: 270px; }
+    .tcf-stat { flex: 1 1 100%; border-right: 0; border-bottom: 1px solid var(--line); }
+    .tcf-stat:last-child { border-bottom: 0; }
+    .tcf-foot-row { grid-template-columns: 1fr; gap: 26px; }
+    .tcf-hero-actions .tcf-btn { flex: 1 1 100%; }
+    .tcf-cta-actions .tcf-btn { flex: 1 1 100%; }
+}
+
+@media (max-width: 460px) {
+    .tcf-wrap { padding: 0 16px; }
+    .tcf-step { padding: 18px; gap: 14px; }
+    .tcf-benefit { padding: 18px; }
+    .tcf-side-card { padding: 20px; }
+    .tcf-faq-q { padding: 16px; font-size: 14.5px; }
+    .tcf-faq-a p { padding: 0 16px 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tcf * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+        <header class="header-wraper clearfix">
+            <div class="top-wraper clearfix">
+                <div class="container clearfix">
+                    <div class="logo"><a href="#"><img src="assets/img/brand/logo-header.webp" alt="" title=""></a></div>
+                    <ul class="sd3-topnav">
+                        <li><a href="#" class="sd3-topnav-cta">Free E-Consult</a></li>
+                        <li><a href="#">Get A Quote</a></li>
+                        <li><a href="appointment.html">Book An Appointment</a></li>
+                    </ul>
+                    <div class="top-block clearfix">
+                        <div class="apppoint-btn dropdown">
+                            <a href="tel:+917042211273" class="theme-btn btn-style-one callbtn"><span class="btn-title"><b>Call 070422 11273</b></span></a>
+                            <a class="dropdown-icon" href="https://wa.me/917042211273"><img src="assets/img/brand/icon-whatsapp.webp" alt=""/></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="middle-wraper main-header clearfix">
+                <div class="header-lower clearfix">
+                    <div class="container clearfix">
+
+                        <div class="main-box clearfix">
+                            <div class="nav-outer clearfix">
+                                <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
+                                <nav class="main-menu clearfix">
+                                    <ul class="navigation clearfix">
+                                        <li class="dropdown"><a href="#">Super Speciality Dentistry</a>
+                                            <ul>
+                                                <li><a href="#">Full Mouth Rehabilitation</a></li>
+                                                <li><a href="#">Guided Tissue Regeneration</a></li>
+                                                <li><a href="#">Orthognathic Surgery</a></li>
+                                                <li><a href="#">TMJ Treatment</a></li>
+                                                <li><a href="#">Oral Cancer Treatment</a></li>
+                                                <li><a href="#">Facial Cosmetic Treatments</a></li>
+                                                <li><a href="#">No Drill Dentistry</a></li>
+                                                <li><a href="#">Cleft Lip and Palate</a></li>
+                                                <li><a href="#">Eye Prosthesis</a></li>
+                                                <li><a href="#">Jaw/Tounge Reconstruction</a></li>
+                                                <li><a href="#">Jaw Cyst or Tumor</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Implant Dentistry</a>
+                                            <ul>
+                                                <li><a href="#">Single Tooth Implant</a></li>
+                                                <li><a href="#">Multiple Implants</a></li>
+                                                <li><a href="#">All on 4 Implants</a></li>
+                                                <li><a href="#">All on 6/8 Implants</a></li>
+                                                <li><a href="#">Zygomatic Implants</a></li>
+                                                <li><a href="#">Basal Implants</a></li>
+                                                <li><a href="#">Mini Implants</a></li>
+                                                <li><a href="#">Keyhole Implants</a></li>
+                                                <li><a href="#">Bone Grafting</a></li>
+                                                <li><a href="#">Soft Tissue Grafting</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Same Day Dentistry</a>
+                                            <ul>
+                                                <li><a href="#">Same Day Implants</a></li>
+                                                <li><a href="#">Same Day Dentures</a></li>
+                                                <li><a href="#">Teeth in An Hour</a></li>
+                                                <li><a href="#">Single Visit RCT</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Our Information</a>
+                                            <ul>
+                                                <li><a href="#">About Us</a></li>
+                                                <li><a href="#">Lifetime Warranties</a></li>
+                                                <li><a href="#">Smile Gallery</a></li>
+                                                <li><a href="#">Free Implant Analysis</a></li>
+                                                <li><a href="#">Overseas Patients</a></li>
+                                                <li><a href="#">Our Dental Office</a></li>
+                                                <li><a href="#">Treatment Finance</a></li>
+                                                <li><a href="#">Awards &amp; Accreditations</a></li>
+                                                <li><a href="#">Sterilization Protocols</a></li>
+                                                <li><a href="#">Quality Assurance</a></li>
+                                                <li><a href="#">Research Publications</a></li>
+                                                <li><a href="#">Team of Experts</a></li>
+                                                <li><a href="#">Careers</a></li>
+                                                <li><a href="#">Press</a></li>
+                                                <li><a href="#">Blog</a></li>
+                                                <li><a href="#">Privacy Policy</a></li>
+                                                <li><a href="#">Disclaimer</a></li>
+                                                <li><a href="#">Terms &amp; Conditions</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Technology</a>
+                                            <ul>
+                                                <li><a href="#">CEREC</a></li>
+                                                <li><a href="#">Joint Vibration Analysis</a></li>
+                                                <li><a href="#">Microscope Assisted Dentistry</a></li>
+                                                <li><a href="#">Tek-Scan Analysis</a></li>
+                                                <li><a href="#">Anti Snoring Device</a></li>
+                                                <li><a href="#">LASER Assisted Dentistry</a></li>
+                                                <li><a href="#">TENS Therapy</a></li>
+                                                <li><a href="#">Conscious Sedation Dentistry</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">General Dentistry</a>
+                                            <ul>
+                                                <li><a href="tooth-colored-fillings.html">Tooth Colored Fillings</a></li>
+                                                <li><a href="#">Composite Bonding</a></li>
+                                                <li><a href="#">Cleaning &amp; Polishing</a></li>
+                                                <li><a href="#">Orthodontic Treatments</a></li>
+                                                <li><a href="#">Invisalign</a></li>
+                                                <li><a href="#">Crowns &amp; Bridges</a></li>
+                                                <li><a href="#">Root Canal Treatment</a></li>
+                                                <li><a href="#">Complete Dentures</a></li>
+                                                <li><a href="#">Tooth Extractions</a></li>
+                                                <li><a href="#">Wisdom Molar Extraction</a></li>
+                                                <li><a href="#">Fluoride Therapy</a></li>
+                                                <li><a href="#">Gingival Flap Surgery</a></li>
+                                                <li><a href="#">Gum Contouring</a></li>
+                                                <li><a href="#">Frenectomy</a></li>
+                                                <li><a href="#">Night Guard</a></li>
+                                                <li><a href="#">Root End Surgery</a></li>
+                                                <li><a href="#">Pit &amp; Fissure Sealants</a></li>
+                                                <li><a href="#">LNAP</a></li>
+                                                <li><a href="#">Partial Dentures</a></li>
+                                                <li><a href="#">Overdentures</a></li>
+                                                <li><a href="#">Pediatric dentistry</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown lt-tab"><a href="#">Dental Problems</a>
+                                            <ul>
+                                                <li><a href="#">Tooth Decay</a></li>
+                                                <li><a href="#">Toothache</a></li>
+                                                <li><a href="#">Tooth Fracture</a></li>
+                                                <li><a href="#">Missing Teeth</a></li>
+                                                <li><a href="#">Loose Teeth</a></li>
+                                                <li><a href="#">Bleeding Gums</a></li>
+                                                <li><a href="#">Teeth Sensitivity</a></li>
+                                                <li><a href="#">Mal-aligned Teeth</a></li>
+                                                <li><a href="#">Orofacial Pain</a></li>
+                                                <li><a href="#">Oral Cancer</a></li>
+                                                <li><a href="#">Lockjaw</a></li>
+                                                <li><a href="#">Discoloured Teeth</a></li>
+                                                <li><a href="#">Bad Breath</a></li>
+                                                <li><a href="#">TMJ Pain</a></li>
+                                                <li><a href="#">Wisdom Tooth Pain</a></li>
+                                                <li><a href="#">Dental Anxiety</a></li>
+                                                <li><a href="#">Periodontal Disease</a></li>
+                                                <li><a href="#">Mouth Sores</a></li>
+                                                <li><a href="#">Unattractive Smiles</a></li>
+                                                <li><a href="#">Bruxism</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="lt-tab"><a href="#">Cases Studies</a></li>
+                                        <li class="lt-tab"><a href="#">Patient Testimonials</a></li>
+                                        <li class="lt-tab"><a href="#">Contact Us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu">
+                    <div class="menu-backdrop"></div>
+                    <div class="close-btn"><span class="icon flaticon-cancel-music"></span></div>
+                    <nav class="menu-box">
+                        <ul class="navigation clearfix"></ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+<div class="tcf">
+
+<!-- ============================ HERO ============================ -->
+<section class="tcf-hero">
+    <div class="tcf-wrap">
+        <div class="tcf-hero-grid">
+            <div>
+                <div class="tcf-crumb">
+                    <a href="index.html">Home</a>
+                    <span class="sep">/</span>
+                    <a href="#">Dental Treatments</a>
+                    <span class="sep">/</span>
+                    <span>Tooth Colored Fillings</span>
+                </div>
+                <span class="tcf-eyebrow">Restorative Dentistry</span>
+                <h1 class="tcf-h1">Tooth-Colored <b>Fillings</b></h1>
+                <p class="tcf-lede">Tooth-colored fillings repair cavities while keeping your smile looking natural. The tooth is cleaned, the decayed portion is removed, and a shade-matched composite material is bonded to restore strength, shape, and function.</p>
+                <div class="tcf-hero-actions">
+                    <a class="tcf-btn tcf-btn-solid" href="appointment.html">Book a Consultation</a>
+                    <a class="tcf-btn tcf-btn-ghost" href="tel:+917042211273">+91 70422 11273</a>
+                </div>
+            </div>
+            <figure class="tcf-hero-figure">
+                <img src="assets/img/treatments/dental-implants.jpeg" alt="Tooth-colored filling treatment at Dr. Prerna Dental Hub">
+            </figure>
+        </div>
+    </div>
+
+    <div class="tcf-stats">
+        <div class="tcf-wrap">
+            <div class="tcf-stats-inner">
+                <div class="tcf-stat"><strong>30&ndash;60m</strong><span>Treatment Time</span></div>
+                <div class="tcf-stat"><strong>1</strong><span>Visit</span></div>
+                <div class="tcf-stat"><strong>Local</strong><span>Anaesthesia</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= MAIN + SIDEBAR ======================= -->
+<div class="tcf-wrap">
+    <div class="tcf-layout">
+        <main>
+
+            <section class="tcf-section" id="what">
+                <div class="tcf-section-head">
+                    <span class="tcf-eyebrow">What is it?</span>
+                    <h2 class="tcf-h2">Natural <b>Tooth Repair</b></h2>
+                    <div class="tcf-rule"></div>
+                </div>
+                <div class="tcf-body">
+                    <p>Tooth-colored fillings repair cavities while keeping your smile looking natural. The tooth is cleaned, the decayed portion is removed, and a shade-matched composite material is bonded to restore strength, shape, and function.</p>
+                    <p>At Dr. Prerna Dental Hub, treatment planning starts with a detailed examination and, when required, digital imaging or other diagnostic tests. The goal is to recommend the most appropriate option for your teeth, gums, bite and overall oral health rather than using a one-size-fits-all approach.</p>
+                </div>
+
+                <div class="tcf-benefits">
+                    <div class="tcf-benefit">
+                        <div class="tcf-benefit-icon"><img src="assets/img/icons/tooth.svg" alt="" width="22" height="22"></div>
+                        <div>
+                            <h4>Natural-looking appearance</h4>
+                            <p>Designed to blend with surrounding teeth where appropriate.</p>
+                        </div>
+                    </div>
+                    <div class="tcf-benefit">
+                        <div class="tcf-benefit-icon"><img src="assets/img/icons/shield-check.svg" alt="" width="22" height="22"></div>
+                        <div>
+                            <h4>Conservative tooth repair</h4>
+                            <p>Focuses on preserving healthy tooth structure where clinically possible.</p>
+                        </div>
+                    </div>
+                    <div class="tcf-benefit">
+                        <div class="tcf-benefit-icon"><img src="assets/img/icons/clock.svg" alt="" width="22" height="22"></div>
+                        <div>
+                            <h4>Strong bonded restoration</h4>
+                            <p>Material and technique are selected according to the tooth and bite.</p>
+                        </div>
+                    </div>
+                    <div class="tcf-benefit">
+                        <div class="tcf-benefit-icon"><img src="assets/img/icons/teeth-row.svg" alt="" width="22" height="22"></div>
+                        <div>
+                            <h4>Comfortable, tooth-friendly treatment</h4>
+                            <p>Planned around your individual dental condition and treatment goals.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tcf-section" id="how">
+                <div class="tcf-section-head">
+                    <span class="tcf-eyebrow">The Procedure</span>
+                    <h2 class="tcf-h2">How it <b>works</b></h2>
+                    <div class="tcf-rule"></div>
+                </div>
+                <div class="tcf-steps">
+                    <div class="tcf-step">
+                        <div class="tcf-step-num">1</div>
+                        <div>
+                            <h4>Consultation &amp; 3D Scan</h4>
+                            <p>We take a CBCT 3D X-ray to assess bone density and plan the implant position digitally before any procedure begins. Completely painless.</p>
+                        </div>
+                    </div>
+                    <div class="tcf-step">
+                        <div class="tcf-step-num">2</div>
+                        <div>
+                            <h4>Implant Placement</h4>
+                            <p>Under local anaesthesia, the titanium post is placed into the jawbone. The procedure takes around 45&ndash;60 minutes. Most patients report feeling only pressure &mdash; no pain.</p>
+                        </div>
+                    </div>
+                    <div class="tcf-step">
+                        <div class="tcf-step-num">3</div>
+                        <div>
+                            <h4>Healing &amp; Osseointegration</h4>
+                            <p>Over 8&ndash;12 weeks the implant fuses with your bone. A temporary crown keeps your smile intact during this period.</p>
+                        </div>
+                    </div>
+                    <div class="tcf-step">
+                        <div class="tcf-step-num">4</div>
+                        <div>
+                            <h4>Final Crown Placement</h4>
+                            <p>Your permanent ceramic crown is fitted and adjusted for perfect bite alignment. You leave the clinic with your full, natural-looking smile.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <aside class="tcf-sidebar">
+            <div class="tcf-side-card">
+                <h3>Book a Free Consultation</h3>
+                <p>Talk to Dr. Prerna about whether an implant is right for you &mdash; no obligation, no charge.</p>
+                <a class="tcf-btn tcf-btn-solid tcf-btn-block" href="appointment.html">Book Appointment</a>
+                <a class="tcf-btn tcf-btn-ghost tcf-btn-block" href="https://wa.me/917042211273" target="_blank" rel="noopener">WhatsApp Us</a>
+                <hr class="tcf-divider">
+                <div class="tcf-quick">
+                    <div class="tcf-quick-row"><span class="k">Procedure Time</span><span class="v">45&ndash;60 min</span></div>
+                    <div class="tcf-quick-row"><span class="k">Healing Period</span><span class="v">8&ndash;12 weeks</span></div>
+                    <div class="tcf-quick-row"><span class="k">Anaesthesia</span><span class="v">Local</span></div>
+                    <div class="tcf-quick-row"><span class="k">Recovery</span><span class="v">Next day</span></div>
+                </div>
+            </div>
+
+            <div class="tcf-side-card">
+                <h4>Related Treatments</h4>
+                <div class="tcf-related">
+                    <a href="#">All on 4 Implants</a>
+                    <a href="#">Basal Implants</a>
+                    <a href="#">Bone Grafting</a>
+                    <a href="#">Same Day Implants</a>
+                    <a href="#">Zygomatic Implants</a>
+                </div>
+            </div>
+
+            <div class="tcf-side-card warm">
+                <div class="tcf-warranty">
+                    <img src="assets/img/awards/seal-lifetime-warranty.webp" alt="">
+                    <div>
+                        <h5>Lifetime Warranty</h5>
+                        <p>All implants placed at our clinic come with our lifetime warranty programme.</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+</div>
+
+<!-- ======================= FAQ (full width) ======================= -->
+<section class="tcf-band tcf-faq-band" id="faq">
+    <div class="tcf-wrap">
+        <div class="tcf-band-head">
+            <span class="tcf-eyebrow">Questions</span>
+            <h2 class="tcf-h2">Frequently <b>Asked</b></h2>
+            <div class="tcf-rule"></div>
+        </div>
+        <div class="tcf-faq" id="tcfFaq">
+            <div class="tcf-faq-item open">
+                <button class="tcf-faq-q">Is the dental implant procedure painful?<span class="tcf-faq-icon">+</span></button>
+                <div class="tcf-faq-a"><p>The procedure is done under local anaesthesia, so you won't feel pain during the surgery &mdash; only mild pressure. Post-procedure discomfort is typically managed with over-the-counter painkillers for 1&ndash;2 days. Most patients return to work the next day.</p></div>
+            </div>
+            <div class="tcf-faq-item">
+                <button class="tcf-faq-q">How long does an implant last?<span class="tcf-faq-icon">+</span></button>
+                <div class="tcf-faq-a"><p>The titanium implant itself can last a lifetime if maintained properly. The ceramic crown typically lasts 15&ndash;25 years before needing replacement. We back every implant with our lifetime warranty programme.</p></div>
+            </div>
+            <div class="tcf-faq-item">
+                <button class="tcf-faq-q">Am I a candidate for a dental implant?<span class="tcf-faq-icon">+</span></button>
+                <div class="tcf-faq-a"><p>Most adults with a missing tooth and adequate jawbone are candidates. Even if you have low bone density, we offer bone grafting procedures to make you eligible. The best way to find out is a free 3D scan consultation.</p></div>
+            </div>
+            <div class="tcf-faq-item">
+                <button class="tcf-faq-q">What does a single tooth implant cost in Delhi?<span class="tcf-faq-icon">+</span></button>
+                <div class="tcf-faq-a"><p>The cost depends on the implant brand and the crown material chosen. We offer transparent pricing with no hidden charges &mdash; book a consultation for a personalised quote. EMI options are also available.</p></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ======================= VIDEO ======================= -->
+<section class="tcf-band tcf-video-band" id="video">
+    <div class="tcf-wrap">
+        <div class="tcf-band-head">
+            <span class="tcf-eyebrow">Watch</span>
+            <h2 class="tcf-h2">From the <b>Clinic</b></h2>
+            <div class="tcf-rule"></div>
+        </div>
+
+        <!-- Click-to-play facade.
+             Put an 11-character YouTube ID in data-video-id and clicking the
+             poster swaps in a real autoplaying iframe. Left empty, the poster
+             opens the clinic's channel in a new tab instead — so the block is
+             never a broken player. Nothing loads from YouTube until a click,
+             which also keeps the page fast and cookie-free on first paint. -->
+        <div class="tcf-video"
+             id="tcfVideo"
+             data-video-id=""
+             data-channel="https://www.youtube.com/channel/UCLK9mOHWDV-AGiivsmfe6KQ">
+            <img class="tcf-video-poster" src="assets/img/treatments/dental-implants.webp" alt="Dr. Prerna Dental Hub video">
+            <button class="tcf-video-play" type="button" aria-label="Play video">
+                <span class="tcf-video-tri" aria-hidden="true"></span>
+            </button>
+            <span class="tcf-video-label">Watch on YouTube</span>
+        </div>
+    </div>
+</section>
+<!-- ======================= BEFORE / AFTER ======================= -->
+<section class="tcf-band tcf-band-warm" id="results">
+    <div class="tcf-wrap">
+        <div class="tcf-band-head">
+            <span class="tcf-eyebrow">Real Results</span>
+            <h2 class="tcf-h2">Before <b>&amp; After</b></h2>
+            <div class="tcf-rule"></div>
+        </div>
+        <div class="tcf-ba-grid">
+            <div class="tcf-ba-card"><img src="assets/img/results/before-after-1.webp" alt="Before and after dental treatment result"></div>
+            <div class="tcf-ba-card"><img src="assets/img/results/before-after-2.webp" alt="Before and after dental treatment result"></div>
+            <div class="tcf-ba-card"><img src="assets/img/results/before-after-3.webp" alt="Before and after dental treatment result"></div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= MEET DR PRERNA ======================= -->
+<section class="tcf-band" id="doctor">
+    <div class="tcf-wrap">
+        <div class="tcf-band-head">
+            <h2 class="tcf-h2">Meet <b>Dr. Prerna Manuja Saini</b></h2>
+            <div class="tcf-rule"></div>
+        </div>
+        <div class="tcf-doctor-grid">
+            <div class="tcf-doctor-photo">
+                <img src="assets/dr-prerna.webp" alt="Dr. Prerna Manuja Saini">
+            </div>
+            <div class="tcf-doctor-body">
+                <p class="tcf-doctor-role">Celebrity Dentist &amp; Smile Design Specialist</p>
+                <p>Dr. Prerna Manuja Saini is a dedicated Dental Surgeon and Smile Design Specialist known for her patient-focused approach and commitment to creating healthy, confident smiles. Awarded as one of the Best Dentists in Delhi, she combines advanced dental expertise with compassionate care.</p>
+                <p>Beyond dentistry, Dr. Prerna is also actively involved in social work, contributing to the well-being of the community through her efforts. Her philosophy is to make quality dental care comfortable, personalized, and accessible while delivering exceptional treatment outcomes.</p>
+                <div class="tcf-doctor-meta">
+                    <div>
+                        <span class="k">Address</span>
+                        <span class="v">H-5/18, Main Road, Pocket 5, Sector 16, Rohini, New Delhi &ndash; 110089</span>
+                    </div>
+                    <div>
+                        <span class="k">Timings</span>
+                        <span class="v">10:00 AM &ndash; 8:00 PM (Open 7 Days)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======================= CLOSING CTA ======================= -->
+<section class="tcf-cta">
+    <!-- decorative engraved ring, inert -->
+    <span class="tcf-cta-ring" aria-hidden="true"></span>
+
+    <div class="tcf-wrap tcf-cta-inner">
+        <span class="tcf-eyebrow">Ready to restore your smile?</span>
+        <h2 class="tcf-h2">Get your implant <b>consultation</b></h2>
+        <p>We'll take a 3D scan, assess your bone, and give you a clear treatment plan with transparent pricing. No pressure, no obligation.</p>
+
+        <div class="tcf-cta-actions">
+            <a class="tcf-btn tcf-cta-primary" href="appointment.html">
+                Book Free Consultation
+                <span class="tcf-cta-arrow" aria-hidden="true">&rarr;</span>
+            </a>
+            <a class="tcf-btn tcf-cta-secondary" href="tel:+917042211273">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                +91 70422 11273
+            </a>
+        </div>
+
+        <ul class="tcf-cta-trust">
+            <li>Open 7 Days &middot; 10 AM &ndash; 8 PM</li>
+            <li>Lifetime Warranty</li>
+            <li>Transparent Pricing &middot; EMI Available</li>
+        </ul>
+    </div>
+</section>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="tcf-foot">
+    <div class="tcf-wrap">
+        <div class="tcf-foot-row">
+            <div>
+                <div class="tcf-foot-logo"><img src="assets/img/brand/logo.webp" alt="Dr. Prerna Dental Hub"></div>
+                <p>Dr. Prerna Dental Hub is a premium dental clinic in Rohini, New Delhi offering painless dentistry, dental implants, aligners and complete smile makeovers with advanced technology and lifetime warranties.</p>
+                <div class="tcf-foot-social">
+                    <a href="https://www.facebook.com/Drprernadentalhub" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/dr.prerna_dental_hub/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                    <a href="https://wa.me/917042211273" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">About Doctor</a></li>
+                    <li><a href="#">Smile Gallery</a></li>
+                    <li><a href="#">Case Studies</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Treatments</h4>
+                <ul>
+                    <li><a href="#">Dental Implants</a></li>
+                    <li><a href="#">Clear Aligners</a></li>
+                    <li><a href="#">Root Canal</a></li>
+                    <li><a href="#">Teeth Whitening</a></li>
+                    <li><a href="#">Smile Makeover</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Get in Touch</h4>
+                <p>H-5/18, Main Road, Pocket 5, Sector 16, Rohini, New Delhi &ndash; 110089</p>
+                <p><a href="tel:+917042211273">+91 70422 11273</a><br>
+                   <a href="mailto:drprernasainiofficial@gmail.com">drprernasainiofficial@gmail.com</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="tcf-foot-bar">&copy; Dr. Prerna Dental Hub. All rights reserved.</div>
+</footer>
+
+</div><!-- /.tcf -->
+
+<script type="text/javascript" src="assets/js/script.js"></script>
+<script>
+(function () {
+    'use strict';
+
+    /* The shared header is position:fixed and its height changes with the
+       breakpoint, so measure it and offset the page by exactly that much —
+       the same approach index.html uses. */
+    var header = document.querySelector('header.header-wraper');
+    var page   = document.querySelector('.tcf');
+    function syncHeaderOffset() {
+        if (!header || !page) { return; }
+        var h = Math.ceil(header.getBoundingClientRect().height);
+        page.style.paddingTop = h + 'px';
+        document.documentElement.style.setProperty('--hdr-h', h + 'px');
+    }
+    syncHeaderOffset();
+    window.addEventListener('resize', syncHeaderOffset);
+    window.addEventListener('load', syncHeaderOffset);
+    /* The logo and web fonts land after first paint and change the header's
+       height, so a one-shot measurement goes stale. Watch the element itself. */
+    if (window.ResizeObserver && header) {
+        new ResizeObserver(syncHeaderOffset).observe(header);
+    }
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(syncHeaderOffset);
+    }
+
+
+    /* ---- video facade ----
+       Nothing is requested from YouTube until the poster is clicked. With a
+       data-video-id set we swap in a real autoplaying iframe; without one we
+       open the channel rather than render a player that cannot resolve. */
+    var vid = document.getElementById('tcfVideo');
+    if (vid) {
+        vid.addEventListener('click', function () {
+            var id = (vid.getAttribute('data-video-id') || '').trim();
+            if (!id) {
+                window.open(vid.getAttribute('data-channel'), '_blank', 'noopener');
+                return;
+            }
+            var f = document.createElement('iframe');
+            f.src = 'https://www.youtube-nocookie.com/embed/' + encodeURIComponent(id) +
+                    '?autoplay=1&rel=0&modestbranding=1';
+            f.title = 'Dr. Prerna Dental Hub video';
+            f.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+            f.setAttribute('allowfullscreen', '');
+            f.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+            vid.innerHTML = '';
+            vid.appendChild(f);
+            vid.style.cursor = 'default';
+        });
+    }
+    /* FAQ accordion. max-height comes from scrollHeight so the panel can
+       animate; it is recomputed on resize because wrapped text changes it. */
+    var items = [].slice.call(document.querySelectorAll('#tcfFaq .tcf-faq-item'));
+    function panel(i) { return i.querySelector('.tcf-faq-a'); }
+    function openItem(i) { i.classList.add('open'); panel(i).style.maxHeight = panel(i).scrollHeight + 'px'; }
+    function shutItem(i) { i.classList.remove('open'); panel(i).style.maxHeight = ''; }
+
+    items.forEach(function (item) {
+        item.querySelector('.tcf-faq-q').addEventListener('click', function () {
+            var wasOpen = item.classList.contains('open');
+            items.forEach(shutItem);
+            if (!wasOpen) { openItem(item); }
+        });
+        if (item.classList.contains('open')) { openItem(item); }
+    });
+    window.addEventListener('resize', function () {
+        items.forEach(function (i) { if (i.classList.contains('open')) { openItem(i); } });
+    });
+
+    /* Placeholder links should not jump to the top of the page. */
+    document.addEventListener('click', function (e) {
+        var a = e.target.closest ? e.target.closest('a') : null;
+        if (a && (a.getAttribute('href') || '') === '#') { e.preventDefault(); }
+    });
+})();
+</script>
+</body>
+</html>

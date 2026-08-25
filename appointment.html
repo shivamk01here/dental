@@ -26,6 +26,50 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
     <style type="text/css">
+    /* The shared header is position:fixed, so the page must start below it.
+       The exact value is re-measured at runtime (see the script at the end). */
+    .sd3 { padding-top: 141px; }
+
+    /* ---- shared header: the same overrides index.html applies ------------
+       Without these the top bar stacks (127px instead of 88px) and the nav
+       renders at 12px, so this page's header did not match the rest of the
+       site. ------------------------------------------------------------- */
+    .header-wraper .container { width: 100%; max-width: 1200px; padding-left: 72px; padding-right: 72px; }
+    .header-wraper .top-wraper .container { display: flex; align-items: center; justify-content: space-between; gap: 28px; }
+    .header-wraper .top-wraper .logo { float: none; flex: 0 0 auto; }
+    .header-wraper .top-wraper .top-block { float: none; margin: 0; flex: 0 0 auto; }
+    .sd3-topnav {
+        display: flex; align-items: center; gap: 34px; flex: 1 1 auto;
+        justify-content: center; list-style: none; margin: 0; padding: 0;
+    }
+    .sd3-topnav li { margin: 0; padding: 0; }
+    .sd3-topnav a {
+        color: #f1e6d0; font-size: 14px; font-weight: 600; white-space: nowrap;
+        font-family: Georgia, 'Times New Roman', serif; transition: color .2s;
+    }
+    .sd3-topnav a:hover { color: #e5aa43; }
+    .sd3-topnav a.sd3-topnav-cta {
+        color: #fff; background: linear-gradient(90deg, #c4912e 0%, rgba(196,145,46,0) 100%);
+        padding: 10px 34px 10px 18px; border-radius: 4px; font-weight: 700;
+    }
+    .sd3-topnav a.sd3-topnav-cta:hover { color: #fff; }
+    @media (max-width: 1100px) { .sd3-topnav { display: none; } }
+
+    @media (min-width: 992px) {
+        .header-wraper .main-box { display: flex; align-items: center; justify-content: center; width: 100%; }
+        .header-wraper .nav-outer { flex: 1 1 auto; display: flex; justify-content: center; min-width: 0; }
+        .header-wraper .main-menu { float: none; width: 100%; max-width: 100%; }
+        .header-wraper .main-menu .navigation { display: flex; justify-content: center; align-items: center; flex-wrap: nowrap; width: 100%; }
+        .header-wraper .main-menu .navigation > li { float: none; flex: 0 1 auto; }
+        .header-wraper .main-menu .navigation > li > a {
+            padding: 8px clamp(4px, 0.9vw, 11px);
+            font-size: clamp(9.5px, 0.78vw, 12px) !important;
+            letter-spacing: clamp(0.4px, 0.14vw, 2.7px);
+            white-space: nowrap;
+        }
+    }
+    @media (max-width: 991px) { .header-wraper .container { padding-left: 32px; padding-right: 32px; } }
+    @media (max-width: 640px) { .header-wraper .container { padding-left: 20px; padding-right: 20px; } }
     .sd3, .sd3 *, .sd3 *:before, .sd3 *:after { box-sizing: border-box; }
 
     .sd3 {
@@ -188,69 +232,170 @@
     <!-- ============================================================
          ORIGINAL HEADER — same as index.html
          ============================================================= -->
-    <header class="header-wraper clearfix">
-        <div class="top-wraper clearfix">
-            <div class="container clearfix">
-                <div class="logo"><a href="index.html"><img src="assets/img/brand/logo-header.webp" alt="" title=""></a></div>
-                <ul class="sd3-topnav">
-                    <li><a href="index.html" class="sd3-topnav-cta">Free E-Consult</a></li>
-                    <li><a href="index.html">Get A Quote</a></li>
-                    <li><a href="#" class="sd3-topnav-cta" style="background:var(--gold,#C4912E);color:#fff;border-radius:6px;padding:6px 16px;">Book An Appointment</a></li>
-                </ul>
-                <div class="top-block clearfix">
-                    <div class="apppoint-btn dropdown">
-                        <a href="tel:+917042211273" class="theme-btn btn-style-one callbtn"><span class="btn-title"><b>Call 070422 11273</b></span></a>
-                        <a class="dropdown-icon" href="https://wa.me/917042211273"><img src="assets/img/brand/icon-whatsapp.webp" alt=""/></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="middle-wraper main-header clearfix">
-            <div class="header-lower clearfix">
+        <header class="header-wraper clearfix">
+            <div class="top-wraper clearfix">
                 <div class="container clearfix">
-                    <div class="main-box clearfix">
-                        <div class="nav-outer clearfix">
-                            <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
-                            <nav class="main-menu clearfix">
-                                <ul class="navigation clearfix">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li class="dropdown"><a href="index.html">General Dentistry</a>
-                                        <ul>
-                                            <li><a href="index.html">Tooth Colored Fillings</a></li>
-                                            <li><a href="index.html">Composite Bonding</a></li>
-                                            <li><a href="index.html">Cleaning &amp; Polishing</a></li>
-                                            <li><a href="index.html">Orthodontic Treatments</a></li>
-                                            <li><a href="index.html">Invisalign</a></li>
-                                            <li><a href="index.html">Crowns &amp; Bridges</a></li>
-                                            <li><a href="index.html">Root Canal Treatment</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="index.html">Implant Dentistry</a>
-                                        <ul>
-                                            <li><a href="index.html">Single Tooth Implant</a></li>
-                                            <li><a href="index.html">Multiple Implants</a></li>
-                                            <li><a href="index.html">All on 4 Implants</a></li>
-                                            <li><a href="index.html">All on 6/8 Implants</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown"><a href="index.html">Super Speciality</a>
-                                        <ul>
-                                            <li><a href="index.html">Full Mouth Rehabilitation</a></li>
-                                            <li><a href="index.html">TMJ Treatment</a></li>
-                                            <li><a href="index.html">Orthognathic Surgery</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="index.html">Our Information</a></li>
-                                    <li><a href="index.html">Contact Us</a></li>
-                                </ul>
-                            </nav>
+                    <div class="logo"><a href="#"><img src="assets/img/brand/logo-header.webp" alt="" title=""></a></div>
+                    <ul class="sd3-topnav">
+                        <li><a href="#" class="sd3-topnav-cta">Free E-Consult</a></li>
+                        <li><a href="#">Get A Quote</a></li>
+                        <li><a href="appointment.html">Book An Appointment</a></li>
+                    </ul>
+                    <div class="top-block clearfix">
+                        <div class="apppoint-btn dropdown">
+                            <a href="tel:+917042211273" class="theme-btn btn-style-one callbtn"><span class="btn-title"><b>Call 070422 11273</b></span></a>
+                            <a class="dropdown-icon" href="https://wa.me/917042211273"><img src="assets/img/brand/icon-whatsapp.webp" alt=""/></a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="mobile-menu"></div>
-        </div>
-    </header>
+            <div class="middle-wraper main-header clearfix">
+                <div class="header-lower clearfix">
+                    <div class="container clearfix">
+
+                        <div class="main-box clearfix">
+                            <div class="nav-outer clearfix">
+                                <div class="mobile-nav-toggler"><span class="icon flaticon-menu"></span></div>
+                                <nav class="main-menu clearfix">
+                                    <ul class="navigation clearfix">
+                                        <li class="dropdown"><a href="#">Super Speciality Dentistry</a>
+                                            <ul>
+                                                <li><a href="#">Full Mouth Rehabilitation</a></li>
+                                                <li><a href="#">Guided Tissue Regeneration</a></li>
+                                                <li><a href="#">Orthognathic Surgery</a></li>
+                                                <li><a href="#">TMJ Treatment</a></li>
+                                                <li><a href="#">Oral Cancer Treatment</a></li>
+                                                <li><a href="#">Facial Cosmetic Treatments</a></li>
+                                                <li><a href="#">No Drill Dentistry</a></li>
+                                                <li><a href="#">Cleft Lip and Palate</a></li>
+                                                <li><a href="#">Eye Prosthesis</a></li>
+                                                <li><a href="#">Jaw/Tounge Reconstruction</a></li>
+                                                <li><a href="#">Jaw Cyst or Tumor</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Implant Dentistry</a>
+                                            <ul>
+                                                <li><a href="#">Single Tooth Implant</a></li>
+                                                <li><a href="#">Multiple Implants</a></li>
+                                                <li><a href="#">All on 4 Implants</a></li>
+                                                <li><a href="#">All on 6/8 Implants</a></li>
+                                                <li><a href="#">Zygomatic Implants</a></li>
+                                                <li><a href="#">Basal Implants</a></li>
+                                                <li><a href="#">Mini Implants</a></li>
+                                                <li><a href="#">Keyhole Implants</a></li>
+                                                <li><a href="#">Bone Grafting</a></li>
+                                                <li><a href="#">Soft Tissue Grafting</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Same Day Dentistry</a>
+                                            <ul>
+                                                <li><a href="#">Same Day Implants</a></li>
+                                                <li><a href="#">Same Day Dentures</a></li>
+                                                <li><a href="#">Teeth in An Hour</a></li>
+                                                <li><a href="#">Single Visit RCT</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Our Information</a>
+                                            <ul>
+                                                <li><a href="#">About Us</a></li>
+                                                <li><a href="#">Lifetime Warranties</a></li>
+                                                <li><a href="#">Smile Gallery</a></li>
+                                                <li><a href="#">Free Implant Analysis</a></li>
+                                                <li><a href="#">Overseas Patients</a></li>
+                                                <li><a href="#">Our Dental Office</a></li>
+                                                <li><a href="#">Treatment Finance</a></li>
+                                                <li><a href="#">Awards &amp; Accreditations</a></li>
+                                                <li><a href="#">Sterilization Protocols</a></li>
+                                                <li><a href="#">Quality Assurance</a></li>
+                                                <li><a href="#">Research Publications</a></li>
+                                                <li><a href="#">Team of Experts</a></li>
+                                                <li><a href="#">Careers</a></li>
+                                                <li><a href="#">Press</a></li>
+                                                <li><a href="#">Blog</a></li>
+                                                <li><a href="#">Privacy Policy</a></li>
+                                                <li><a href="#">Disclaimer</a></li>
+                                                <li><a href="#">Terms &amp; Conditions</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">Technology</a>
+                                            <ul>
+                                                <li><a href="#">CEREC</a></li>
+                                                <li><a href="#">Joint Vibration Analysis</a></li>
+                                                <li><a href="#">Microscope Assisted Dentistry</a></li>
+                                                <li><a href="#">Tek-Scan Analysis</a></li>
+                                                <li><a href="#">Anti Snoring Device</a></li>
+                                                <li><a href="#">LASER Assisted Dentistry</a></li>
+                                                <li><a href="#">TENS Therapy</a></li>
+                                                <li><a href="#">Conscious Sedation Dentistry</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="#">General Dentistry</a>
+                                            <ul>
+                                                <li><a href="tooth-colored-fillings.html">Tooth Colored Fillings</a></li>
+                                                <li><a href="#">Composite Bonding</a></li>
+                                                <li><a href="#">Cleaning &amp; Polishing</a></li>
+                                                <li><a href="#">Orthodontic Treatments</a></li>
+                                                <li><a href="#">Invisalign</a></li>
+                                                <li><a href="#">Crowns &amp; Bridges</a></li>
+                                                <li><a href="#">Root Canal Treatment</a></li>
+                                                <li><a href="#">Complete Dentures</a></li>
+                                                <li><a href="#">Tooth Extractions</a></li>
+                                                <li><a href="#">Wisdom Molar Extraction</a></li>
+                                                <li><a href="#">Fluoride Therapy</a></li>
+                                                <li><a href="#">Gingival Flap Surgery</a></li>
+                                                <li><a href="#">Gum Contouring</a></li>
+                                                <li><a href="#">Frenectomy</a></li>
+                                                <li><a href="#">Night Guard</a></li>
+                                                <li><a href="#">Root End Surgery</a></li>
+                                                <li><a href="#">Pit &amp; Fissure Sealants</a></li>
+                                                <li><a href="#">LNAP</a></li>
+                                                <li><a href="#">Partial Dentures</a></li>
+                                                <li><a href="#">Overdentures</a></li>
+                                                <li><a href="#">Pediatric dentistry</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown lt-tab"><a href="#">Dental Problems</a>
+                                            <ul>
+                                                <li><a href="#">Tooth Decay</a></li>
+                                                <li><a href="#">Toothache</a></li>
+                                                <li><a href="#">Tooth Fracture</a></li>
+                                                <li><a href="#">Missing Teeth</a></li>
+                                                <li><a href="#">Loose Teeth</a></li>
+                                                <li><a href="#">Bleeding Gums</a></li>
+                                                <li><a href="#">Teeth Sensitivity</a></li>
+                                                <li><a href="#">Mal-aligned Teeth</a></li>
+                                                <li><a href="#">Orofacial Pain</a></li>
+                                                <li><a href="#">Oral Cancer</a></li>
+                                                <li><a href="#">Lockjaw</a></li>
+                                                <li><a href="#">Discoloured Teeth</a></li>
+                                                <li><a href="#">Bad Breath</a></li>
+                                                <li><a href="#">TMJ Pain</a></li>
+                                                <li><a href="#">Wisdom Tooth Pain</a></li>
+                                                <li><a href="#">Dental Anxiety</a></li>
+                                                <li><a href="#">Periodontal Disease</a></li>
+                                                <li><a href="#">Mouth Sores</a></li>
+                                                <li><a href="#">Unattractive Smiles</a></li>
+                                                <li><a href="#">Bruxism</a></li>
+                                            </ul>
+                                        </li>
+                                        <li class="lt-tab"><a href="#">Cases Studies</a></li>
+                                        <li class="lt-tab"><a href="#">Patient Testimonials</a></li>
+                                        <li class="lt-tab"><a href="#">Contact Us</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu">
+                    <div class="menu-backdrop"></div>
+                    <div class="close-btn"><span class="icon flaticon-cancel-music"></span></div>
+                    <nav class="menu-box">
+                        <ul class="navigation clearfix"></ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
 
     <div class="sd3">
         <main>
@@ -484,5 +629,25 @@
         });
     })();
     </script>
+<script>
+(function () {
+    'use strict';
+    /* The shared header is position:fixed and its height changes with the
+       breakpoint, so measure it and offset the page by exactly that much —
+       the same approach index.html uses. Without this the first 134px of
+       content sits behind the header. */
+    var header = document.querySelector('header.header-wraper');
+    var page   = document.querySelector('.sd3');
+    function syncHeaderOffset() {
+        if (!header || !page) { return; }
+        page.style.paddingTop = Math.ceil(header.getBoundingClientRect().height) + 'px';
+    }
+    syncHeaderOffset();
+    window.addEventListener('resize', syncHeaderOffset);
+    window.addEventListener('load', syncHeaderOffset);
+    if (window.ResizeObserver && header) { new ResizeObserver(syncHeaderOffset).observe(header); }
+    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(syncHeaderOffset); }
+})();
+</script>
 </body>
 </html>
