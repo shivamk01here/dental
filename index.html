@@ -97,6 +97,27 @@
     .sd3-topnav a.sd3-topnav-cta:hover { color: #fff; }
     @media (max-width: 1100px) { .sd3-topnav { display: none; } }
 
+    /* Below ~640px the logo + call pill + WhatsApp circle no longer fit the
+       flex row. They were 'flex: 0 0 auto', so the WhatsApp button simply
+       overflowed past the right edge and got clipped. Let both ends shrink
+       and trim the call pill so the circle stays fully on screen. */
+    @media (max-width: 640px) {
+        .header-wraper .top-wraper .container { gap: 10px; }
+        .header-wraper .top-wraper .logo { flex: 0 1 auto; min-width: 0; }
+        .header-wraper .top-wraper .logo img { max-width: 118px; height: auto; }
+        .header-wraper .top-wraper .top-block { flex: 0 0 auto; }
+        .header-wraper .top-wraper .apppoint-btn { display: flex; align-items: center; gap: 8px; }
+        .header-wraper .top-wraper .apppoint-btn .callbtn { margin: 0; font-size: 13px; }
+        .header-wraper .top-wraper .apppoint-btn .callbtn .btn-title { font-size: 11px; letter-spacing: .3px; }
+        .header-wraper .top-wraper a.dropdown-icon { flex: 0 0 34px; width: 34px; height: 34px; top: 0; }
+        .header-wraper .top-wraper a.dropdown-icon img { width: 100%; height: 100%; display: block; }
+    }
+    @media (max-width: 400px) {
+        .header-wraper .top-wraper .logo img { max-width: 96px; }
+        .header-wraper .top-wraper .apppoint-btn .callbtn .btn-title { font-size: 10px; }
+        .header-wraper .top-wraper .apppoint-btn .callbtn { padding: 6px 8px; }
+    }
+
     /* Desktop nav: all items in one centred row, auto-fitting the width */
     @media (min-width: 992px) {
         .header-wraper .main-box { display: flex; align-items: center; justify-content: center; width: 100%; }
@@ -532,6 +553,11 @@
         .header-wraper .container { padding-left: 32px; padding-right: 32px; }
         .sd3-hero-row { flex-direction: column; }
         .sd3-hero-left, .sd3-hero-right { flex: 1 1 100%; max-width: 100%; }
+        /* Stacked layout leads with the photos; the copy (and its CTAs) follow.
+           Dots stay glued to the strip they belong to. */
+        .sd3-hero-right { order: 1; }
+        .sd3-hero-dots  { order: 2; }
+        .sd3-hero-left  { order: 3; margin-top: 28px; }
         .sd3-hi img { height: 240px; }
         .sd3 .sd3-hi-2 { margin: 40px -18px 0 -18px; }
         .sd3-grid4 img { height: 200px; }
@@ -658,7 +684,7 @@
                     <div class="top-block clearfix">
                         <div class="apppoint-btn dropdown">
                             <a href="tel:+917042211273" class="theme-btn btn-style-one callbtn"><span class="btn-title"><b>Call 070422 11273</b></span></a>
-                            <a class="dropdown-icon" href="https://wa.me/917042211273"><img src="assets/img/brand/icon-whatsapp.webp" alt=""/></a>
+                            <a class="dropdown-icon" href="https://wa.me/917042211273" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><img src="assets/img/brand/icon-whatsapp.webp" alt="WhatsApp"/></a>
                         </div>
                     </div>
                 </div>
@@ -822,7 +848,6 @@
                         <div class="sd3-hero-left">
                             <h1>Dr. Prerna<br><span class="sd3-h1-gold">Dental Hub</span></h1>
                             <h2 class="sd3-hero-h2">All Your Dental Treatments Under One Roof</h2>
-                            <div class="sd3-tag">Painless Dental Care. Trusted by Families.</div>
                             <div class="sd3-sub">Advanced Dentistry with a Gentle, Patient-First Approach.</div>
                             <p class="sd3-lead">Get expert dental care from an experienced team using advanced technology &mdash; with your comfort at every step.</p>
                             <ul>
@@ -904,15 +929,15 @@
                             <div class="sd3-promise-1">
                                 <img class="sd3-seal" src="assets/img/awards/seal-lifetime-warranty.webp" alt="">
                                 <div class="sd3-promise-txt">
-                                    <span>Lifetime warranty</span>
+                                    <span>Lifetime Warranty</span>
                                     <span>On All Treatments</span>
                                 </div>
                             </div>
                             <div class="sd3-promise-1">
                                 <img class="sd3-seal" src="assets/img/awards/seal-lowest-price.webp" alt="">
                                 <div class="sd3-promise-txt">
-                                    <span>Losest Price</span>
-                                    <span>Garanted</span>
+                                    <span>Lowest Price</span>
+                                    <span>Guaranteed</span>
                                 </div>
                             </div>
                         </div>
@@ -936,7 +961,7 @@
                     <div class="sd3-choose-1">
                         <div class="sd3-choose-img"><img src="assets/img/why-choose-us/best-dentist.webp" alt=""></div>
                         <div class="sd3-choose-txt">
-                            <p>Selecting the ideal dentist and ensuring precise treatment planning is crucial. At Stunning Dentistry, we dedicate ourselves to providing &ldquo;The Best Dentist in Delhi, India&rdquo;, delivering exceptional care with unmatched precision.</p>
+                            <p>Selecting the ideal dentist and ensuring precise treatment planning is crucial. We dedicate ourselves to providing &ldquo;The Best Dentist in Delhi, India,&rdquo; delivering exceptional care with unmatched precision.</p>
                         </div>
                     </div>
 
@@ -1135,18 +1160,18 @@
                     <div class="sd3-stats-card">
                         <div class="sd3-stats-1">
                             <div class="sd3-stats-circ"><img src="assets/img/stats/dental-implants.webp" alt="Dental Implant"></div>
-                            <h3>7500 +</h3>
+                            <h3>15000 +</h3>
                             <p>Dental Implant</p>
                         </div>
                         <div class="sd3-stats-1">
                             <div class="sd3-stats-circ"><img src="assets/img/stats/invisible-aligners.webp" alt="Invisible Aligners"></div>
-                            <h3>3500 +</h3>
-                            <p>Invisible Aligners</p>
+                            <h3>2000 +</h3>
+                            <p>Veneers and Crowns</p>
                         </div>
                         <div class="sd3-stats-1">
                             <div class="sd3-stats-circ"><img src="assets/img/stats/invisalign.webp" alt="Invisalign"></div>
-                            <h3>2000 +</h3>
-                            <p>Invisalign</p>
+                            <h3>5000 +</h3>
+                            <p>Invisible Aligners</p>
                         </div>
                     </div>
                 </div>
