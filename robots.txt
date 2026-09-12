@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /sample.html
+
+Sitemap: https://drprernadentalhub.com/sitemap.xml
