@@ -104,6 +104,9 @@
        flex row. They were 'flex: 0 0 auto', so the WhatsApp button simply
        overflowed past the right edge and got clipped. Let both ends shrink
        and trim the call pill so the circle stays fully on screen. */
+    /* Hamburger in top bar — hidden by default (desktop shows original in nav bar) */
+    .sd3-top-hamburger { display: none; }
+
     @media (max-width: 640px) {
         .header-wraper .top-wraper .container { gap: 10px; }
         .header-wraper .top-wraper .logo { flex: 0 1 auto; min-width: 0; }
@@ -114,6 +117,9 @@
         .header-wraper .top-wraper .apppoint-btn .callbtn .btn-title { font-size: 11px; letter-spacing: .3px; }
         .header-wraper .top-wraper a.dropdown-icon { flex: 0 0 34px; width: 34px; height: 34px; top: 0; }
         .header-wraper .top-wraper a.dropdown-icon img { width: 100%; height: 100%; display: block; }
+        /* Show hamburger in top bar, hide the one in the nav row */
+        .sd3-top-hamburger { display: flex; align-items: center; justify-content: center; flex: 0 0 34px; width: 34px; height: 34px; background: none; border: none; padding: 0; cursor: pointer; color: #fff; font-size: 22px; }
+        .header-wraper .mobile-nav-toggler:not(.sd3-top-hamburger) { display: none; }
     }
     @media (max-width: 400px) {
         .header-wraper .top-wraper .logo img { max-width: 120px; }
@@ -688,6 +694,7 @@
                         <div class="apppoint-btn dropdown">
                             <a href="tel:+917042211273" class="theme-btn btn-style-one callbtn"><span class="btn-title"><b><i class="fa fa-phone"></i> 070422 11273</b></span></a>
                             <a class="dropdown-icon" href="https://wa.me/917042211273" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><img src="assets/img/brand/icon-whatsapp.webp" alt="WhatsApp"/></a>
+                            <button class="mobile-nav-toggler sd3-top-hamburger" aria-label="Open menu"><span class="icon flaticon-menu"></span></button>
                         </div>
                     </div>
                 </div>
