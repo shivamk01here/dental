@@ -200,11 +200,15 @@
     .sd3-top-hamburger { display: none; }
 
     @media (max-width: 640px) {
-        .header-wraper .top-wraper .container { gap: 10px; }
-        .header-wraper .top-wraper .logo { flex: 0 1 auto; min-width: 0; }
-        .header-wraper .top-wraper .logo img { max-width: 145px; height: auto; }
+        .header-wraper .top-wraper .container { gap: 7px; padding-left: 14px; padding-right: 14px; }
+        /* The logo takes whatever the call pill, WhatsApp and burger leave.
+           'width: 100%' with a cap means it fills that space and grows on
+           roomier phones, but can never overflow its box and slide under the
+           call pill — which is what a bare max-width let it do. */
+        .header-wraper .top-wraper .logo { flex: 1 1 auto; min-width: 0; }
+        .header-wraper .top-wraper .logo img { width: 100%; max-width: 168px; height: auto; }
         .header-wraper .top-wraper .top-block { flex: 0 0 auto; }
-        .header-wraper .top-wraper .apppoint-btn { display: flex; align-items: center; gap: 8px; }
+        .header-wraper .top-wraper .apppoint-btn { display: flex; align-items: center; gap: 7px; }
         .header-wraper .top-wraper .apppoint-btn .callbtn { margin: 0; font-size: 13px; }
         .header-wraper .top-wraper .apppoint-btn .callbtn .btn-title { font-size: 11px; letter-spacing: .3px; }
         .header-wraper .top-wraper a.dropdown-icon { flex: 0 0 34px; width: 34px; height: 34px; top: 0; }
@@ -214,9 +218,8 @@
         .header-wraper .mobile-nav-toggler:not(.sd3-top-hamburger) { display: none; }
     }
     @media (max-width: 400px) {
-        .header-wraper .top-wraper .logo img { max-width: 120px; }
         .header-wraper .top-wraper .apppoint-btn .callbtn .btn-title { font-size: 10px; }
-        .header-wraper .top-wraper .apppoint-btn .callbtn { padding: 6px 8px; }
+        .header-wraper .top-wraper .apppoint-btn .callbtn { padding: 6px 7px; }
     }
 
     /* Desktop nav: all items in one centred row, auto-fitting the width */
@@ -273,23 +276,27 @@
     .sd3-hero-row { display: flex; gap: 40px; align-items: center; }
     .sd3-hero-left  { flex: 0 0 42%; max-width: 42%; }
 
+    /* Type hierarchy: the h1 is the only loud element. The h2 used to be 27px
+       bold gold, which put a second shout next to the h1's gold half and made
+       the two compete; it is now a lighter, smaller, letter-spaced tagline so
+       the ramp reads 56 > 20 > 17 > 16 with one accent colour, not two. */
     .sd3-hero h1 {
         font-family: Georgia, 'Times New Roman', serif;
-        font-size: 56px; font-weight: 700; line-height: 1.08; margin-bottom: 22px;
+        font-size: 56px; font-weight: 700; line-height: 1.06; margin-bottom: 18px;
         /* keep the words tight — the scale does the work, not the spacing */
-        text-align: left; text-justify: auto; word-spacing: -1px; letter-spacing: -0.5px;
+        text-align: left; text-justify: auto; word-spacing: -1px; letter-spacing: -0.8px;
         color: var(--ink);
     }
     .sd3-hero h1 .sd3-h1-gold { color: var(--gold); }
     .sd3-hero h1::after {
-        content: ""; display: block; width: 72px; height: 3px; margin-top: 16px;
+        content: ""; display: block; width: 58px; height: 2px; margin-top: 18px;
         background: linear-gradient(90deg, var(--gold), var(--gold2));
         border-radius: 2px;
     }
     .sd3-hero .sd3-hero-h2 {
         font-family: Georgia, 'Times New Roman', serif;
-        font-size: 27px; font-weight: 700; color: var(--gold); line-height: 1.3;
-        margin: 0 0 8px; text-align: left;
+        font-size: 20px; font-weight: 400; color: #A67C1A; line-height: 1.5;
+        margin: 0 0 12px; text-align: left; letter-spacing: .2px;
     }
     .sd3-hero .sd3-hero-bold {
         font-family: Georgia, 'Times New Roman', serif;
@@ -301,7 +308,7 @@
     }
     .sd3-hero .sd3-sub {
         font-family: Georgia, 'Times New Roman', serif;
-        font-size: 18px; font-weight: 400; color: var(--ink); margin-bottom: 14px; line-height: 1.6;
+        font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 12px; line-height: 1.6;
     }
     .sd3-hero .sd3-lead {
         font-family: Georgia, 'Times New Roman', serif;
@@ -317,24 +324,53 @@
         flex: 0 0 22px; width: 22px; color: #3FA845;
         font-size: 21px; line-height: 1.1; font-weight: 700;
     }
-    .sd3-hero-cta { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
-    .sd3-hero-cta .sd3-call {
-        display: inline-flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 700;
-        color: var(--gold); font-family: Georgia, 'Times New Roman', serif;
-        padding: 12px 26px; border: 1px solid var(--gold); border-radius: 6px;
-        background: transparent; transition: .2s;
+    /* Hero CTAs — a matched pair. Both buttons share identical box metrics
+       (height, radius, border, type) so they read as one control group; only
+       the fill differs, marking primary vs secondary. */
+    /* The left column is only 42% wide, so at 15px/26px these two wrapped onto
+       separate rows and each sized to its own label — a wide primary above a
+       narrow secondary. Sharing the row as equal flex tracks keeps them a
+       matched pair at every width; max-width stops them stretching absurdly
+       wide on large screens. */
+    .sd3-hero-cta { display: flex; align-items: stretch; gap: 14px; flex-wrap: nowrap; }
+    .sd3-hero-cta > .sd3-btn,
+    .sd3-hero-cta > .sd3-call {
+        flex: 1 1 0; min-width: 0; max-width: 250px;
+        display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+        min-height: 54px; padding: 0 16px; margin: 0;
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 14px; font-weight: 700; letter-spacing: .2px; line-height: 1.25;
+        text-align: center; border-radius: 8px; border: 1.5px solid var(--gold);
+        transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
     }
-    .sd3-hero-cta .sd3-call:hover { background: var(--gold); color: #fff; }
-    .sd3-hero-cta .sd3-call:hover i { color: #fff; }
+    /* primary — gold fill */
+    .sd3-hero-cta > .sd3-btn {
+        background: linear-gradient(135deg, var(--gold) 0%, #b3831f 100%);
+        color: #fff; box-shadow: 0 6px 18px rgba(196,145,46,.30);
+    }
+    .sd3-hero-cta > .sd3-btn:hover {
+        background: linear-gradient(135deg, #b3831f 0%, #9a7019 100%);
+        box-shadow: 0 10px 24px rgba(196,145,46,.42); transform: translateY(-2px);
+    }
+    /* secondary — outline on a warm tint, same footprint as the primary */
+    .sd3-hero-cta > .sd3-call {
+        background: rgba(255,255,255,.72); color: var(--gold);
+        box-shadow: 0 2px 10px rgba(30,27,23,.06);
+    }
+    .sd3-hero-cta > .sd3-call:hover {
+        background: var(--gold); color: #fff;
+        box-shadow: 0 10px 24px rgba(196,145,46,.32); transform: translateY(-2px);
+    }
+    .sd3-hero-cta > .sd3-btn:active,
+    .sd3-hero-cta > .sd3-call:active { transform: translateY(0); }
     .sd3-hero-cta .sd3-call i {
-        width: 26px; height: 26px; border-radius: 50%; border: 1px solid currentColor;
-        display: flex; align-items: center; justify-content: center; font-size: 12px;
+        width: 24px; height: 24px; flex: 0 0 24px; border-radius: 50%;
+        border: 1.5px solid currentColor;
+        display: inline-flex; align-items: center; justify-content: center; font-size: 11px;
     }
 
     /* three overlapping award photos */
     .sd3-hero-right { flex: 1 1 auto; min-width: 0; display: flex; align-items: flex-start; gap: 16px; }
-    /* Slider dots are phone-only; hidden by default. */
-    .sd3-hero-dots { display: none; }
     .sd3-hi { flex: 1 1 0; min-width: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 14px 32px rgba(0,0,0,.20); }
     .sd3-hi img { width: 100%; height: 400px; object-fit: cover; object-position: 50% 25%; }
     .sd3 .sd3-hi-1 { z-index: 1; }
@@ -588,6 +624,8 @@
     .sd3-dr-img img { width: 100%; display: block; }
     .sd3-dr-txt { flex: 1 1 auto; min-width: 0; }
     .sd3-dr-txt p { font-size: 16px; line-height: 1.85; color: #3a3530; font-family: Georgia, 'Times New Roman', serif; margin-bottom: 18px; }
+    .sd3-dr-txt strong { font-weight: 700; color: var(--ink); }
+    .sd3-dr-txt .sd3-dr-name { color: var(--gold); font-size: 17px; }
     /* Role line under the doctor's name */
     .sd3-dr-role {
         font-size: 18px; font-weight: 700; color: var(--gold);
@@ -654,11 +692,16 @@
         .header-wraper .container { padding-left: 32px; padding-right: 32px; }
         .sd3-hero-row { flex-direction: column; }
         .sd3-hero-left, .sd3-hero-right { flex: 1 1 100%; max-width: 100%; }
-        /* Stacked layout leads with the photos; the copy (and its CTAs) follow.
-           Dots stay glued to the strip they belong to. */
-        .sd3-hero-right { order: 1; }
-        .sd3-hero-dots  { order: 2; }
-        .sd3-hero-left  { order: 3; margin-top: 28px; }
+        /* Stacked order: headline, photo slider, then the supporting copy and
+           CTAs. 'display: contents' dissolves the left column's own box so its
+           two halves become flex items of the row and can be ordered around
+           the slider that sits between them. */
+        .sd3-hero-left  { display: contents; }
+        .sd3-hero-head  { order: 1; }
+        .sd3-hero-right { order: 2; margin-top: 16px; }
+        .sd3-hero-body  { order: 3; margin-top: 18px; }
+        /* the row's own 40px gap would stack on top of these margins */
+        .sd3-hero-row { gap: 0; }
         .sd3-hi img { height: 240px; }
         .sd3 .sd3-hi-2 { margin: 40px -18px 0 -18px; }
         .sd3-grid4 img { height: 200px; }
@@ -708,14 +751,16 @@
         .sd3-hero-right::-webkit-scrollbar { display: none; }
         .sd3-hi { flex: 0 0 80%; scroll-snap-align: center; }
         .sd3-hi img { height: 300px; }
+        /* Narrower screens need tighter metrics, but the pair stays equal-width. */
+        .sd3-hero-cta { gap: 10px; }
+        .sd3-hero-cta > .sd3-btn,
+        .sd3-hero-cta > .sd3-call {
+            max-width: none; padding: 0 10px;
+            min-height: 52px; font-size: 13px; gap: 7px;
+        }
+        .sd3-hero-cta .sd3-call i { width: 21px; height: 21px; flex: 0 0 21px; font-size: 10px; }
         /* the staggered offset only makes sense in the side-by-side collage */
         .sd3 .sd3-hi-2 { margin: 0; }
-        .sd3-hero-dots { display: flex; justify-content: center; gap: 8px; margin-top: 14px; }
-        .sd3-hero-dot {
-            width: 8px; height: 8px; border-radius: 50%;
-            background: var(--gold2); opacity: .4; transition: opacity .25s, background .25s;
-        }
-        .sd3-hero-dot.active { opacity: 1; background: var(--gold); }
         .sd3-grid4 { grid-template-columns: repeat(2, 1fr); }
         .sd3-grid4 img, .sd3-grid4.tall img { height: 170px; }
         .sd3-choose-1 { flex-direction: column; }
@@ -947,31 +992,31 @@
             <section class="sd3-hero">
                 <div class="sd3-wrap">
                     <div class="sd3-hero-row">
+                        <!-- Split into head/body so phones can slot the photo
+                             slider between the headline and the supporting copy;
+                             on desktop the two stack in one column as before. -->
                         <div class="sd3-hero-left">
-                            <h1>Dr. Prerna<br><span class="sd3-h1-gold">Dental Hub</span></h1>
-                            <h2 class="sd3-hero-h2">All Your Dental Treatments Under One Roof</h2>
-                            <div class="sd3-sub">Advanced Dentistry with a Gentle, Patient-First Approach.</div>
-                            <p class="sd3-lead">Get expert dental care from an experienced team using advanced technology &mdash; with your comfort at every step.</p>
-                            <ul>
-                                <li><span class="sd3-tick">&#10003;</span> Advanced &amp; Painless Treatment Technology</li>
-                                <li><span class="sd3-tick">&#10003;</span> Open 7 Days a Week | 10 AM &ndash; 8 PM</li>
-                            </ul>
-                            <div class="sd3-hero-cta">
-                                <a class="sd3-btn sq" href="appointment.html">Book Your Appointment &rarr;</a>
-                                <a class="sd3-call" href="tel:+917042211273"><i class="fa fa-phone"></i> Call Now</a>
+                            <div class="sd3-hero-head">
+                                <h1>Dr. Prerna<br><span class="sd3-h1-gold">Dental Hub</span></h1>
+                                <h2 class="sd3-hero-h2">All Your Dental Treatments Under One Roof</h2>
+                            </div>
+                            <div class="sd3-hero-body">
+                                <div class="sd3-sub">Advanced Dentistry with a Gentle, Patient-First Approach.</div>
+                                <p class="sd3-lead">Get expert dental care from an experienced team using advanced technology &mdash; with your comfort at every step.</p>
+                                <ul>
+                                    <li><span class="sd3-tick">&#10003;</span> Advanced &amp; Painless Treatment Technology</li>
+                                    <li><span class="sd3-tick">&#10003;</span> Open 7 Days a Week | 10 AM &ndash; 8 PM</li>
+                                </ul>
+                                <div class="sd3-hero-cta">
+                                    <a class="sd3-btn sq" href="appointment.html">Book Your Appointment</a>
+                                    <a class="sd3-call" href="tel:+917042211273"><i class="fa fa-phone"></i> Call Now</a>
+                                </div>
                             </div>
                         </div>
                         <div class="sd3-hero-right">
                             <figure class="sd3-hi sd3-hi-1"><img src="assets/img/hero/award-brett-lee.webp" alt="Dr. Prerna receiving an award from Brett Lee"></figure>
                             <figure class="sd3-hi sd3-hi-2"><img src="assets/img/hero/award-bhagyashree.webp" alt="Dr. Prerna receiving an award from Bhagyashree"></figure>
                             <figure class="sd3-hi sd3-hi-3"><img src="assets/img/hero/award-mouni-roy.webp" alt="Dr. Prerna receiving an award from Mouni Roy"></figure>
-                        </div>
-                        <!-- Slider dots: CSS hides them above 640px, where the
-                             three photos sit side by side as before. -->
-                        <div class="sd3-hero-dots" id="sd3HeroDots" aria-hidden="true">
-                            <span class="sd3-hero-dot active"></span>
-                            <span class="sd3-hero-dot"></span>
-                            <span class="sd3-hero-dot"></span>
                         </div>
                     </div>
                 </div>
@@ -1332,8 +1377,8 @@
                         <div class="sd3-dr-img"><img src="assets/dr-prerna.webp" alt="Dr. Prerna Manuja Saini"></div>
                         <div class="sd3-dr-txt">
                             <p class="sd3-dr-role">Celebrity Dentist &amp; Smile Design Specialist</p>
-                            <p>Dr. Prerna Manuja Saini is a dedicated Dental Surgeon and Smile Design Specialist known for her patient-focused approach and commitment to creating healthy, confident smiles. Awarded as one of the Best Dentists in Delhi, she combines advanced dental expertise with compassionate care.</p>
-                            <p>Beyond dentistry, Dr. Prerna is also actively involved in social work, contributing to the well-being of the community through her efforts. Her philosophy is to make quality dental care comfortable, personalized, and accessible while delivering exceptional treatment outcomes.</p>
+                            <p><strong class="sd3-dr-name">Dr. Prerna Manuja Saini</strong> is a dedicated Dental Surgeon and Smile Design Specialist known for her patient-focused approach and commitment to creating healthy, confident smiles. Awarded as one of the <strong>Best Dentists in Delhi</strong>, she combines advanced dental expertise with compassionate care.</p>
+                            <p>Beyond dentistry, <strong class="sd3-dr-name">Dr. Prerna</strong> is also actively involved in social work, contributing to the well-being of the community through her efforts. Her philosophy is to make quality dental care comfortable, personalized, and accessible while delivering exceptional treatment outcomes.</p>
                             <div class="sd3-dr-meta">
                                 <p class="sd3-dr-addr">H-5/18, Main Road, Pocket 5, Sector 16, Rohini, New Delhi &ndash; 110089</p>
                                 <p class="sd3-dr-time"><span>Timings:</span> 10:00 AM &ndash; 8:00 PM (Open 7 Days)</p>
@@ -1534,7 +1579,7 @@
         (function () {
             var strip = document.querySelector('.sd3-hero-right');
             var dots  = document.querySelectorAll('#sd3HeroDots .sd3-hero-dot');
-            if (!strip || !dots.length) { return; }
+            if (!strip) { return; }
 
             var cards = strip.querySelectorAll('.sd3-hi');
             var tick  = null;
@@ -1572,7 +1617,68 @@
                 })(k);
             }
 
+            /* ---- Autoplay (phones only) ----
+               Scrolls the strip itself rather than calling scrollIntoView,
+               which would also drag the page vertically once the hero has
+               scrolled out of view. Direction ping-pongs instead of wrapping
+               so there is never a long jump from the last card back to the
+               first — with three cards that jump is the whole strip wide. */
+            var phone  = window.matchMedia('(max-width: 640px)');
+            var calm   = window.matchMedia('(prefers-reduced-motion: reduce)');
+            var DWELL  = 4000;   // how long a card rests before moving on
+            var RESUME = 6000;   // stillness required before autoplay resumes
+            var timer = null, idle = null, dir = 1;
+
+            function centreOn(i) {
+                var card = cards[i];
+                if (!card) { return; }
+                var sr = strip.getBoundingClientRect();
+                var cr = card.getBoundingClientRect();
+                var to = strip.scrollLeft + (cr.left - sr.left) - (sr.width - cr.width) / 2;
+                try { strip.scrollTo({ left: to, behavior: 'smooth' }); }
+                catch (e) { strip.scrollLeft = to; }
+            }
+
+            function advance() {
+                var i = nearestCard();
+                if (i + dir >= cards.length) { dir = -1; }
+                else if (i + dir < 0) { dir = 1; }
+                centreOn(i + dir);
+            }
+
+            function stop() {
+                if (timer) { clearInterval(timer); timer = null; }
+            }
+
+            function play() {
+                stop();
+                if (!phone.matches || calm.matches || document.hidden) { return; }
+                timer = setInterval(advance, DWELL);
+            }
+
+            /* Any touch or manual scroll hands control back to the visitor;
+               autoplay only resumes once they have been still a while. */
+            function defer() {
+                stop();
+                clearTimeout(idle);
+                idle = setTimeout(play, RESUME);
+            }
+
+            strip.addEventListener('touchstart',  defer, { passive: true });
+            strip.addEventListener('pointerdown', defer, { passive: true });
+            strip.addEventListener('wheel',       defer, { passive: true });
+            for (var d = 0; d < dots.length; d++) {
+                dots[d].addEventListener('click', defer);
+            }
+
+            document.addEventListener('visibilitychange', function () {
+                if (document.hidden) { stop(); } else { play(); }
+            });
+            if (phone.addEventListener) { phone.addEventListener('change', play); }
+            else if (phone.addListener) { phone.addListener(play); }
+
             syncDots();
+            play();
         })();
     })();
     </script>
