@@ -570,11 +570,13 @@
         // 2. Add an Email Service (Gmail works): copy the Service ID
         // 3. Create an Email Template with these variables:
         //      {{from_name}}, {{phone}}, {{email}}, {{service}}, {{date}}, {{time}}, {{notes}}
-        //    Set the template's "To Email" to: drprernasainiofficial@gmail.com (or your clinic email)
+        //    In the template's settings set  To Email = {{to_email}}  and  Reply To = {{reply_to}}
+        //    so every booking lands in CLINIC_EMAIL below.
         // 4. Copy your Public Key from Account > API Keys
         var EMAILJS_PUBLIC_KEY = 'u61wv3SbvpD0KW9AX';
         var EMAILJS_SERVICE_ID = 'service_vwe03xl';
         var EMAILJS_TEMPLATE_ID = 'template_2pmbz2j';
+        var CLINIC_EMAIL = 'drprernasainiofficial@gmail.com';
 
         emailjs.init(EMAILJS_PUBLIC_KEY);
 
@@ -605,6 +607,8 @@
             msg.textContent = '';
 
             var params = {
+                to_email: CLINIC_EMAIL,
+                reply_to: email || CLINIC_EMAIL,
                 from_name: name,
                 phone: phone,
                 email: email || '(not provided)',
